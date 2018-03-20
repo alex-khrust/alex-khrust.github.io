@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*outline: red 1px solid;*/
+}
+
+header, footer {
+    height: 55px;
+    background-color: rgb(220, 220, 220);
+}
+
+.flex, header, footer, .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h2 {
+    font: 23px "Ruslan Display";
+    margin: 0;
+}
+
+ul li, header a:hover {
+    list-style: none;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.menu li a {
+
+}
+
+/* Андерлайн с центра */
+.hvr-underline-from-center {
+    display: inline-flex;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: #2098d1;
+    height: 1px;
+    transition: all 0.3s linear;
+}
+
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+/*nav a{
+	transition-duration:0.5s;
+}
+nav a:hover{
+	transform:scale(1.2);
+	text-decoration:none;
+}*/
+
+#home {
+    background: url('../img/bg.jpg') no-repeat;
+    padding: 18% 0;
+    width: 100%;
+    background-size: cover;
+}
+
+.about {
+    height: 100px;
+    background-color: rgb(220, 220, 220);
+    margin: 0 auto;
+    color: #30477b;
+}
+
+#skills {
+    margin: 50px;
+}
+
+.item {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.tec img {
+    width: 80px;
+    filter: grayscale(100%);
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+    margin: 50px 5px;
+}
+
+.tec img:hover {
+    filter: grayscale(0%) drop-shadow(0 10px 15px blue);
+    transform: scale(1.2) translateY(-10px);
+    margin: 50px 20px;
+}
+
+ul.portfolio-items {
+    padding-left: 0px;
+}
+
+.portfolio-item {
+    width: 250px;
+    height: 250px;
+    border: 5px solid grey;
+    margin: 25px;
+    padding: 0;
+    overflow: hidden;
+    transition-duration: 0.5s;
+    box-shadow: 0 0 30px grey;
+    position: relative;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.5s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover img {
+    filter: blur(5px);
+}
+
+.caption {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    color: white;
+    padding: 15px;
+}
+
+.caption h3 {
+    width: 100%;
+    text-align: center;
+    transform: translateY(-300px);
+    transition: all 0.5s ease-in-out;
+}
+
+.caption p {
+    transform: translateY(300px);
+    transition: all 1s ease-in-out;
+}
+
+.portfolio-item:hover .caption h3 {
+    transform: translateY(0px);
+    border-bottom: 1px solid white;
+}
+
+.portfolio-item:hover .caption p {
+    transform: translateY(-70px);
+}
