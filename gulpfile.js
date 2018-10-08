@@ -37,7 +37,7 @@ gulp.task('scripts', function () {
         'libs/jquery/dist/jquery.min.js'
     ])
         .pipe(concat('libs.min.js'))
-        .pipe(uglify('js'))
+        .pipe(uglify('js'));
 });
 
 gulp.task('css-libs', ['sass'], function () {
