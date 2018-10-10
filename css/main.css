@@ -1,7 +1,114 @@
-@import url(../css/normalize.css);
-@import url(../css/preloader.css);
 @import url(../libs/wow/css/libs/animate.css);
 @import url("https://fonts.googleapis.com/css?family=Ruslan+Display&amp;subset=cyrillic");
+.wrap_preloader {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #212227;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000; }
+
+.cssload-loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-perspective: 780px;
+          perspective: 780px;
+  z-index: 100000; }
+
+.cssload-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%; }
+  .cssload-inner.cssload-one {
+    left: 0%;
+    top: 0%;
+    animation: cssload-rotate-one 1.15s linear infinite;
+    -o-animation: cssload-rotate-one 1.15s linear infinite;
+    -ms-animation: cssload-rotate-one 1.15s linear infinite;
+    -webkit-animation: cssload-rotate-one 1.15s linear infinite;
+    -moz-animation: cssload-rotate-one 1.15s linear infinite;
+    border-bottom: 3px solid #5C5EDC; }
+  .cssload-inner.cssload-two {
+    right: 0%;
+    top: 0%;
+    animation: cssload-rotate-two 1.15s linear infinite;
+    -o-animation: cssload-rotate-two 1.15s linear infinite;
+    -ms-animation: cssload-rotate-two 1.15s linear infinite;
+    -webkit-animation: cssload-rotate-two 1.15s linear infinite;
+    -moz-animation: cssload-rotate-two 1.15s linear infinite;
+    border-right: 3px solid rgba(76, 70, 101, 0.99); }
+  .cssload-inner.cssload-three {
+    right: 0%;
+    bottom: 0%;
+    animation: cssload-rotate-three 1.15s linear infinite;
+    -o-animation: cssload-rotate-three 1.15s linear infinite;
+    -ms-animation: cssload-rotate-three 1.15s linear infinite;
+    -webkit-animation: cssload-rotate-three 1.15s linear infinite;
+    -moz-animation: cssload-rotate-three 1.15s linear infinite;
+    border-top: 3px solid #e9908a; }
+
+@keyframes cssload-rotate-one {
+  0% {
+    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
+
+@-webkit-keyframes cssload-rotate-one {
+  0% {
+    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
+
+@keyframes cssload-rotate-two {
+  0% {
+    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
+
+@-webkit-keyframes cssload-rotate-two {
+  0% {
+    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
+
+@keyframes cssload-rotate-three {
+  0% {
+    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
+
+@-webkit-keyframes cssload-rotate-three {
+  0% {
+    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
+
 .navBurger {
   position: relative;
   right: 20px;
@@ -10,8 +117,7 @@
   background: #111;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-background-clip: content-box;
-          background-clip: content-box;
+  background-clip: content-box;
   width: 30px;
   height: 24px;
   border-top: 11px solid transparent;
@@ -43,8 +149,7 @@
     width: 90%; }
   .navBurger.active {
     background: transparent;
-    -webkit-background-clip: content-box;
-            background-clip: content-box; }
+    background-clip: content-box; }
   .navBurger.active:before {
     -webkit-transform: rotate(135deg);
     -ms-transform: rotate(135deg);
@@ -60,7 +165,7 @@
     background: #eee;
     width: 110%; }
 
-.overlay {
+.mob-menu {
   position: fixed;
   background: #2c3e50;
   top: 0;
@@ -79,13 +184,13 @@
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   overflow: hidden; }
-  .overlay.open {
+  .mob-menu.open {
     opacity: 0.99;
     visibility: visible;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1); }
-    .overlay.open li {
+    .mob-menu.open li {
       display: block;
       -webkit-animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5) forwards;
               animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5) forwards;
@@ -97,16 +202,16 @@
       -webkit-transform-origin: right bottom;
           -ms-transform-origin: right bottom;
               transform-origin: right bottom; }
-      .overlay.open li:nth-of-type(2) {
+      .mob-menu.open li:nth-of-type(2) {
         -webkit-animation-delay: 0.5s;
                 animation-delay: 0.5s; }
-      .overlay.open li:nth-of-type(3) {
+      .mob-menu.open li:nth-of-type(3) {
         -webkit-animation-delay: 0.6s;
                 animation-delay: 0.6s; }
-      .overlay.open li:nth-of-type(4) {
+      .mob-menu.open li:nth-of-type(4) {
         -webkit-animation-delay: 0.7s;
                 animation-delay: 0.7s; }
-      .overlay.open li:nth-of-type(5) {
+      .mob-menu.open li:nth-of-type(5) {
         -webkit-animation-delay: 0.8s;
                 animation-delay: 0.8s; }
 
@@ -173,7 +278,8 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  outline: none; }
 
 body {
   background: #fdd10d;
@@ -196,7 +302,7 @@ header {
     z-index: -1;
     -o-object-fit: cover;
        object-fit: cover; }
-  header .container, header .about, header .nav-sticky, header section, header .tec, header .portfolio-items, header .portfolio-item, header .portfolio-item .caption, .portfolio-item header .caption, header footer {
+  header .container, header .about, header .nav-sticky, header section, header .tec, header .portfolio-list, header .portfolio-list__item, header .portfolio-list__item .caption, .portfolio-list__item header .caption, header footer {
     width: 100%;
     height: 100%;
     position: relative; }
@@ -213,7 +319,7 @@ header {
 .container-page {
   margin: 0 1%; }
 
-.container, header .about, .nav-sticky, section, .tec, .portfolio-items, .portfolio-item, .portfolio-item .caption, footer {
+.container, header .about, .nav-sticky, section, .tec, .portfolio-list, .portfolio-list__item, .portfolio-list__item .caption, footer {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -279,23 +385,26 @@ header {
       position: relative;
       overflow: hidden;
       padding-bottom: 5px; }
-      .nav-sticky .menu-sticky li:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 50%;
-        right: 50%;
-        bottom: 0;
-        background: #2098d1;
-        height: 3px;
-        -webkit-transition: all 0.3s linear;
-        -o-transition: all 0.3s linear;
-        transition: all 0.3s linear; }
-      .nav-sticky .menu-sticky li:hover:before, .nav-sticky .menu-sticky li :hover:before, .nav-sticky .menu-sticky li :active:before {
-        left: 0;
-        right: 0; }
       .nav-sticky .menu-sticky li a {
         text-decoration: none; }
+        .nav-sticky .menu-sticky li a:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          right: 50%;
+          bottom: 0;
+          background: #2098d1;
+          height: 3px;
+          -webkit-transition: all 0.3s linear;
+          -o-transition: all 0.3s linear;
+          transition: all 0.3s linear; }
+        .nav-sticky .menu-sticky li a:hover:before {
+          left: 0;
+          right: 0; }
+        .nav-sticky .menu-sticky li a.active:before {
+          left: 0;
+          right: 0; }
 
 section {
   width: 100%;
@@ -355,10 +464,10 @@ section {
               transform: scale(1.2) translateY(-10px);
       margin: 50px 2%; }
 
-.portfolio-items {
+.portfolio-list {
   margin: 0 auto; }
 
-.portfolio-item {
+.portfolio-list__item {
   -webkit-box-flex: 400px;
   -webkit-flex: 400px;
       -ms-flex: 400px;
@@ -374,15 +483,15 @@ section {
   -webkit-box-shadow: 0 0 30px grey;
           box-shadow: 0 0 30px grey;
   position: relative; }
-  .portfolio-item img {
+  .portfolio-list__item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     -webkit-transition-duration: 0.5s;
          -o-transition-duration: 0.5s;
             transition-duration: 0.5s;
-    -o-object-fit: cover;
-       object-fit: cover; }
-  .portfolio-item .caption {
+    position: absolute;
+    top: 0; }
+  .portfolio-list__item .caption {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -392,7 +501,7 @@ section {
     -webkit-filter: drop-shadow(0 0 4px white);
             filter: drop-shadow(0 0 4px white);
     text-shadow: 0 0 50px white; }
-    .portfolio-item .caption h3 {
+    .portfolio-list__item .caption h3 {
       width: 100%;
       -webkit-transform: translateY(-50vh);
           -ms-transform: translateY(-50vh);
@@ -401,7 +510,7 @@ section {
       -o-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
       position: relative; }
-    .portfolio-item .caption p {
+    .portfolio-list__item .caption p {
       width: 100%;
       -webkit-transform: translateY(50vh);
           -ms-transform: translateY(50vh);
@@ -410,7 +519,7 @@ section {
       -o-transition: all 1s ease-in-out;
       transition: all 1s ease-in-out;
       position: relative; }
-    .portfolio-item .caption .btn {
+    .portfolio-list__item .caption .btn {
       text-decoration: none;
       padding: 15px 50px;
       color: #444;
@@ -424,21 +533,21 @@ section {
       -webkit-transition: all 300ms ease;
       -o-transition: all 300ms ease;
       transition: all 300ms ease; }
-      .portfolio-item .caption .btn:hover {
+      .portfolio-list__item .caption .btn:hover {
         -webkit-box-shadow: 5px 5px 20px #333;
                 box-shadow: 5px 5px 20px #333; }
-  .portfolio-item:hover img {
+  .portfolio-list__item:hover img {
     -webkit-filter: blur(5px);
             filter: blur(5px);
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1); }
-  .portfolio-item:hover .caption h3 {
+  .portfolio-list__item:hover .caption h3 {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
     border-bottom: 1px solid white; }
-  .portfolio-item:hover .caption p {
+  .portfolio-list__item:hover .caption p {
     -webkit-transform: translateY(-5vh);
         -ms-transform: translateY(-5vh);
             transform: translateY(-5vh); }
@@ -448,7 +557,7 @@ section {
   height: 300px;
   margin-bottom: 20px;
   display: block; }
-  #contacts .container, #contacts header .about, header #contacts .about, #contacts .nav-sticky, #contacts section, #contacts .tec, #contacts .portfolio-items, #contacts .portfolio-item, #contacts .portfolio-item .caption, .portfolio-item #contacts .caption, #contacts footer {
+  #contacts .container, #contacts header .about, header #contacts .about, #contacts .nav-sticky, #contacts section, #contacts .tec, #contacts .portfolio-list, #contacts .portfolio-list__item, #contacts .portfolio-list__item .caption, .portfolio-list__item #contacts .caption, #contacts footer {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around; }

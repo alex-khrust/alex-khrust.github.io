@@ -1,17 +1,16 @@
-@import url(../css/normalize.css)
-//@import url(style.css) //Старые стили
-@import url(../css/preloader.css)
+@import "preloader"
+@import "hamburger"
 @import url(../libs/wow/css/libs/animate.css)
 @import url('https://fonts.googleapis.com/css?family=Ruslan+Display&amp;subset=cyrillic')
 //@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great|Neucha')
-@import "hamburger"
 
 
 *
   margin: 0
   padding: 0
   box-sizing: border-box
-  //outline: 1px solid red
+  outline: none
+  //&:focus
 
 body
   background: #fdd10d
@@ -89,21 +88,26 @@ header
       position: relative
       overflow: hidden
       padding-bottom: 5px
-      &:before
-        content: ""
-        position: absolute
-        z-index: -1
-        left: 50%
-        right: 50%
-        bottom: 0
-        background: #2098d1
-        height: 3px
-        transition: all 0.3s linear
-      &:hover:before, :hover:before, :active:before
-        left: 0
-        right: 0
       & a
         text-decoration: none
+        &:before
+          content: ""
+          position: absolute
+          z-index: -1
+          left: 50%
+          right: 50%
+          bottom: 0
+          background: #2098d1
+          height: 3px
+          transition: all 0.3s linear
+        &:hover:before
+          left: 0
+          right: 0
+        &.active
+          &:before
+            left: 0
+            right: 0
+
 
 //----- section
 section
@@ -153,11 +157,11 @@ section
 
 //------ #portfolio
 
-.portfolio-items
+.portfolio-list
   @extend .container
   margin: 0 auto
 
-.portfolio-item
+.portfolio-list__item
   flex: 400px
   min-height: 300px
   margin: 2% 1%
@@ -171,9 +175,11 @@ section
   @extend .container
   & img
     width: 100%
-    height: 100%
+    height: auto
     transition-duration: 0.5s
-    object-fit: cover
+    //object-fit: cover
+    position: absolute
+    top: 0
   & .caption
     width: 100%
     height: 100%

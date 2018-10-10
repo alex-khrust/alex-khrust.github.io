@@ -56,7 +56,7 @@
     background: #eee;
     width: 110%; }
 
-.overlay {
+.mob-menu {
   position: fixed;
   background: #2c3e50;
   top: 0;
@@ -75,13 +75,13 @@
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   overflow: hidden; }
-  .overlay.open {
+  .mob-menu.open {
     opacity: 0.99;
     visibility: visible;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1); }
-    .overlay.open li {
+    .mob-menu.open li {
       display: block;
       -webkit-animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5) forwards;
               animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5) forwards;
@@ -93,16 +93,16 @@
       -webkit-transform-origin: right bottom;
           -ms-transform-origin: right bottom;
               transform-origin: right bottom; }
-      .overlay.open li:nth-of-type(2) {
+      .mob-menu.open li:nth-of-type(2) {
         -webkit-animation-delay: 0.5s;
                 animation-delay: 0.5s; }
-      .overlay.open li:nth-of-type(3) {
+      .mob-menu.open li:nth-of-type(3) {
         -webkit-animation-delay: 0.6s;
                 animation-delay: 0.6s; }
-      .overlay.open li:nth-of-type(4) {
+      .mob-menu.open li:nth-of-type(4) {
         -webkit-animation-delay: 0.7s;
                 animation-delay: 0.7s; }
-      .overlay.open li:nth-of-type(5) {
+      .mob-menu.open li:nth-of-type(5) {
         -webkit-animation-delay: 0.8s;
                 animation-delay: 0.8s; }
 
