@@ -302,7 +302,7 @@ header {
     z-index: -1;
     -o-object-fit: cover;
        object-fit: cover; }
-  header .container, header .about, header .nav-sticky, header section, header .tec, header .portfolio-list, header .portfolio-list__item, header .portfolio-list__item .caption, .portfolio-list__item header .caption, header footer {
+  header .container, header .about, header .nav-sticky, header section, header .tec, header .portfolio-list, header .portfolio-list__item, header .portfolio-list__item .portfolio-list__item--caption, .portfolio-list__item header .portfolio-list__item--caption, header footer {
     width: 100%;
     height: 100%;
     position: relative; }
@@ -319,7 +319,7 @@ header {
 .container-page {
   margin: 0 1%; }
 
-.container, header .about, .nav-sticky, section, .tec, .portfolio-list, .portfolio-list__item, .portfolio-list__item .caption, footer {
+.container, header .about, .nav-sticky, section, .tec, .portfolio-list, .portfolio-list__item, .portfolio-list__item .portfolio-list__item--caption, footer {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -355,8 +355,14 @@ header {
   .nav-sticky:hover {
     background: white; }
   .nav-sticky .logo {
-    width: 8.2em;
+    width: 15.2em;
     text-align: center; }
+    .nav-sticky .logo img {
+      width: 60px;
+      height: auto;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      float: left; }
     .nav-sticky .logo h2 {
       font: 23px "Ruslan Display"; }
   .nav-sticky .wrap_menu-sticky {
@@ -491,7 +497,7 @@ section {
             transition-duration: 0.5s;
     position: absolute;
     top: 0; }
-  .portfolio-list__item .caption {
+  .portfolio-list__item .portfolio-list__item--caption {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -500,8 +506,11 @@ section {
     text-align: center;
     -webkit-filter: drop-shadow(0 0 4px white);
             filter: drop-shadow(0 0 4px white);
-    text-shadow: 0 0 50px white; }
-    .portfolio-list__item .caption h3 {
+    text-shadow: 0 0 50px white;
+    -webkit-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s; }
+    .portfolio-list__item .portfolio-list__item--caption h3 {
       width: 100%;
       -webkit-transform: translateY(-50vh);
           -ms-transform: translateY(-50vh);
@@ -510,7 +519,7 @@ section {
       -o-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
       position: relative; }
-    .portfolio-list__item .caption p {
+    .portfolio-list__item .portfolio-list__item--caption p {
       width: 100%;
       -webkit-transform: translateY(50vh);
           -ms-transform: translateY(50vh);
@@ -519,7 +528,7 @@ section {
       -o-transition: all 1s ease-in-out;
       transition: all 1s ease-in-out;
       position: relative; }
-    .portfolio-list__item .caption .btn {
+    .portfolio-list__item .portfolio-list__item--caption .btn {
       text-decoration: none;
       padding: 15px 50px;
       color: #444;
@@ -532,22 +541,29 @@ section {
               border-radius: 10px;
       -webkit-transition: all 300ms ease;
       -o-transition: all 300ms ease;
-      transition: all 300ms ease; }
-      .portfolio-list__item .caption .btn:hover {
-        -webkit-box-shadow: 5px 5px 20px #333;
-                box-shadow: 5px 5px 20px #333; }
+      transition: all 300ms ease;
+      -webkit-box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.3), -5px -5px 20px rgba(51, 51, 51, 0.3), 5px -5px 20px rgba(51, 51, 51, 0.3), -5px 5px 20px rgba(51, 51, 51, 0.3);
+              box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.3), -5px -5px 20px rgba(51, 51, 51, 0.3), 5px -5px 20px rgba(51, 51, 51, 0.3), -5px 5px 20px rgba(51, 51, 51, 0.3); }
+      .portfolio-list__item .portfolio-list__item--caption .btn:hover {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        -webkit-transform: scale(0.95);
+            -ms-transform: scale(0.95);
+                transform: scale(0.95); }
+  .portfolio-list__item:hover .portfolio-list__item--caption {
+    background: rgba(255, 255, 255, 0.3); }
   .portfolio-list__item:hover img {
     -webkit-filter: blur(5px);
             filter: blur(5px);
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1); }
-  .portfolio-list__item:hover .caption h3 {
+  .portfolio-list__item:hover .portfolio-list__item--caption h3 {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
     border-bottom: 1px solid white; }
-  .portfolio-list__item:hover .caption p {
+  .portfolio-list__item:hover .portfolio-list__item--caption p {
     -webkit-transform: translateY(-5vh);
         -ms-transform: translateY(-5vh);
             transform: translateY(-5vh); }
@@ -557,7 +573,7 @@ section {
   height: 300px;
   margin-bottom: 20px;
   display: block; }
-  #contacts .container, #contacts header .about, header #contacts .about, #contacts .nav-sticky, #contacts section, #contacts .tec, #contacts .portfolio-list, #contacts .portfolio-list__item, #contacts .portfolio-list__item .caption, .portfolio-list__item #contacts .caption, #contacts footer {
+  #contacts .container, #contacts header .about, header #contacts .about, #contacts .nav-sticky, #contacts section, #contacts .tec, #contacts .portfolio-list, #contacts .portfolio-list__item, #contacts .portfolio-list__item .portfolio-list__item--caption, .portfolio-list__item #contacts .portfolio-list__item--caption, #contacts footer {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around; }
