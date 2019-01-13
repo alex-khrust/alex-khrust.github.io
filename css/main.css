@@ -1,4 +1,3 @@
-@import url(../libs/wow/css/libs/animate.css);
 @import url("https://fonts.googleapis.com/css?family=Ruslan+Display&amp;subset=cyrillic");
 .wrap_preloader {
   content: '';
@@ -19,7 +18,6 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-perspective: 780px;
           perspective: 780px;
@@ -123,10 +121,8 @@
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
   -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-      transform: rotate(0deg);
+  transform: rotate(0deg);
   -webkit-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
   .navBurger:before, .navBurger:after {
     content: "";
@@ -137,10 +133,8 @@
     right: 0;
     will-change: rotate;
     -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-        transform: rotate(0deg);
+    transform: rotate(0deg);
     -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
   .navBurger:before {
     top: -10px; }
@@ -152,16 +146,14 @@
     background-clip: content-box; }
   .navBurger.active:before {
     -webkit-transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-        transform: rotate(135deg);
+    transform: rotate(135deg);
     top: 0;
     background: #eee;
     width: 110%; }
   .navBurger.active:after {
     bottom: 0;
     -webkit-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-        transform: rotate(-135deg);
+    transform: rotate(-135deg);
     background: #eee;
     width: 110%; }
 
@@ -174,21 +166,17 @@
   height: 100%;
   opacity: 0;
   -webkit-transform-origin: right top;
-      -ms-transform-origin: right top;
           transform-origin: right top;
   -webkit-transform: scale(0);
-      -ms-transform: scale(0);
           transform: scale(0);
   visibility: hidden;
   -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   overflow: hidden; }
   .mob-menu.open {
     opacity: 0.99;
     visibility: visible;
     -webkit-transform: scale(1);
-        -ms-transform: scale(1);
             transform: scale(1); }
     .mob-menu.open li {
       display: block;
@@ -197,10 +185,8 @@
       -webkit-animation-delay: 0.4s;
               animation-delay: 0.4s;
       -webkit-transform: rotate(-7deg);
-          -ms-transform: rotate(-7deg);
               transform: rotate(-7deg);
       -webkit-transform-origin: right bottom;
-          -ms-transform-origin: right bottom;
               transform-origin: right bottom; }
       .mob-menu.open li:nth-of-type(2) {
         -webkit-animation-delay: 0.5s;
@@ -241,11 +227,9 @@
         padding: 10px 40px 10px 40px;
         margin: 5px 0;
         -webkit-transition: 0.2s;
-        -o-transition: 0.2s;
         transition: 0.2s; }
         .overlayMenu ul li a:hover, .overlayMenu ul li a:active, .overlayMenu ul li a:focus {
           -webkit-transform: translateX(-2px);
-              -ms-transform: translateX(-2px);
                   transform: translateX(-2px);
           padding-left: 80px;
           outline: 1px solid rgba(255, 255, 255, 0.3);
@@ -312,7 +296,6 @@ header {
     text-shadow: 0 0 10px #000, 0 0 20px #000;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
 
@@ -322,28 +305,25 @@ header {
 .container, header .about, .nav-sticky, section, .tec, .portfolio-list, .portfolio-list__item, .portfolio-list__item .portfolio-list__item--caption, footer {
   width: 100%;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .nav-sticky {
   width: 100%;
-  height: 55px;
+  height: 60px;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
   background: rgba(255, 255, 255, 0.7);
   -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
@@ -356,31 +336,51 @@ header {
     background: white; }
   .nav-sticky .logo {
     width: 15.2em;
-    text-align: center; }
-    .nav-sticky .logo img {
-      width: 60px;
-      height: auto;
-      -webkit-border-radius: 50%;
-              border-radius: 50%;
-      float: left; }
+    height: 100%; }
+    .nav-sticky .logo a {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .nav-sticky .logo .logo-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .nav-sticky .logo .logo-img img {
+        width: 65px;
+        height: auto; }
     .nav-sticky .logo h2 {
-      font: 23px "Ruslan Display"; }
+      width: 160px;
+      font: 23px "Ruslan Display";
+      text-align: center;
+      margin-left: 10px; }
   .nav-sticky .wrap_menu-sticky {
     width: 50%; }
   .nav-sticky .menu-sticky {
     width: 100%;
     display: -webkit-inline-box;
-    display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     font-size: 22px; }
     .nav-sticky .menu-sticky li {
       display: -webkit-inline-box;
-      display: -webkit-inline-flex;
       display: -ms-inline-flexbox;
       display: inline-flex;
       -webkit-transform: translateZ(0);
@@ -403,7 +403,6 @@ header {
           background: #2098d1;
           height: 3px;
           -webkit-transition: all 0.3s linear;
-          -o-transition: all 0.3s linear;
           transition: all 0.3s linear; }
         .nav-sticky .menu-sticky li a:hover:before {
           left: 0;
@@ -424,25 +423,21 @@ section {
 
 #services {
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
   #services .item {
     -webkit-box-flex: 300px;
-    -webkit-flex: 300px;
         -ms-flex: 300px;
             flex: 300px;
     min-height: 182px;
     margin: 2% 1%;
     text-align: center;
     padding: 30px 15px;
-    -webkit-align-self: stretch;
-        -ms-flex-item-align: stretch;
-            align-self: stretch;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
     background: snow;
     border: 2px solid lightgray;
-    -webkit-border-radius: 10px;
-            border-radius: 10px;
+    border-radius: 10px;
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     #services .item h3 {
@@ -456,17 +451,14 @@ section {
     -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
     -webkit-transition-duration: 0.5s;
-         -o-transition-duration: 0.5s;
             transition-duration: 0.5s;
     -webkit-transition-delay: 0.2s;
-         -o-transition-delay: 0.2s;
             transition-delay: 0.2s;
     margin: 50px 0.5%; }
     .tec img:hover, .tec img .tec--active {
       -webkit-filter: grayscale(0%) drop-shadow(0 10px 15px blue);
               filter: grayscale(0%) drop-shadow(0 10px 15px blue);
       -webkit-transform: scale(1.2) translateY(-10px);
-          -ms-transform: scale(1.2) translateY(-10px);
               transform: scale(1.2) translateY(-10px);
       margin: 50px 2%; }
 
@@ -475,7 +467,6 @@ section {
 
 .portfolio-list__item {
   -webkit-box-flex: 400px;
-  -webkit-flex: 400px;
       -ms-flex: 400px;
           flex: 400px;
   min-height: 300px;
@@ -484,7 +475,6 @@ section {
   padding: 0;
   overflow: hidden;
   -webkit-transition-duration: 0.5s;
-       -o-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-box-shadow: 0 0 30px grey;
           box-shadow: 0 0 30px grey;
@@ -493,7 +483,6 @@ section {
     width: 100%;
     height: auto;
     -webkit-transition-duration: 0.5s;
-         -o-transition-duration: 0.5s;
             transition-duration: 0.5s;
     position: absolute;
     top: 0; }
@@ -508,24 +497,19 @@ section {
             filter: drop-shadow(0 0 4px white);
     text-shadow: 0 0 50px white;
     -webkit-transition-duration: 0.5s;
-         -o-transition-duration: 0.5s;
             transition-duration: 0.5s; }
     .portfolio-list__item .portfolio-list__item--caption h3 {
       width: 100%;
       -webkit-transform: translateY(-50vh);
-          -ms-transform: translateY(-50vh);
               transform: translateY(-50vh);
       -webkit-transition: all 0.5s ease-in-out;
-      -o-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
       position: relative; }
     .portfolio-list__item .portfolio-list__item--caption p {
       width: 100%;
       -webkit-transform: translateY(50vh);
-          -ms-transform: translateY(50vh);
               transform: translateY(50vh);
       -webkit-transition: all 1s ease-in-out;
-      -o-transition: all 1s ease-in-out;
       transition: all 1s ease-in-out;
       position: relative; }
     .portfolio-list__item .portfolio-list__item--caption .btn {
@@ -537,10 +521,8 @@ section {
       position: relative;
       background: white;
       border: 2px solid lightgray;
-      -webkit-border-radius: 10px;
-              border-radius: 10px;
+      border-radius: 10px;
       -webkit-transition: all 300ms ease;
-      -o-transition: all 300ms ease;
       transition: all 300ms ease;
       -webkit-box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.3), -5px -5px 20px rgba(51, 51, 51, 0.3), 5px -5px 20px rgba(51, 51, 51, 0.3), -5px 5px 20px rgba(51, 51, 51, 0.3);
               box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.3), -5px -5px 20px rgba(51, 51, 51, 0.3), 5px -5px 20px rgba(51, 51, 51, 0.3), -5px 5px 20px rgba(51, 51, 51, 0.3); }
@@ -548,7 +530,6 @@ section {
         -webkit-box-shadow: none;
                 box-shadow: none;
         -webkit-transform: scale(0.95);
-            -ms-transform: scale(0.95);
                 transform: scale(0.95); }
   .portfolio-list__item:hover .portfolio-list__item--caption {
     background: rgba(255, 255, 255, 0.3); }
@@ -556,16 +537,13 @@ section {
     -webkit-filter: blur(5px);
             filter: blur(5px);
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
             transform: scale(1.1); }
   .portfolio-list__item:hover .portfolio-list__item--caption h3 {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
             transform: translateY(0);
     border-bottom: 1px solid white; }
   .portfolio-list__item:hover .portfolio-list__item--caption p {
     -webkit-transform: translateY(-5vh);
-        -ms-transform: translateY(-5vh);
             transform: translateY(-5vh); }
 
 #contacts {
@@ -574,9 +552,8 @@ section {
   margin-bottom: 20px;
   display: block; }
   #contacts .container, #contacts header .about, header #contacts .about, #contacts .nav-sticky, #contacts section, #contacts .tec, #contacts .portfolio-list, #contacts .portfolio-list__item, #contacts .portfolio-list__item .portfolio-list__item--caption, .portfolio-list__item #contacts .portfolio-list__item--caption, #contacts footer {
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around; }
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
   #contacts .email, #contacts .skype {
     display: inline-block;
     margin-left: 50px;
