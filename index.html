@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Александр Хрусталёв - Front-end developer | Portfolio</title>
+  <title>Александр Хрусталёв - Front-End developer | Portfolio</title>
   <link rel="icon" href="img/favicon-portfolio.png" type="image/x-icon">
   <link rel="shortcut icon" href="img/favicon-portfolio.png" type="image/x-icon">
   
@@ -20,8 +20,28 @@
 <!--</div>-->
 <!--</div>-->
 
-<header>
-  <svg xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1186.4 662.8" style="enable-background:new 0 0 1186.4 662.8;" xml:space="preserve">
+<div id="fullpage">
+  <header id="header" class="section">
+    <div class="container">
+      <div class="top-nav">
+        <div class="logo">
+          <a href="#section-services">
+            <div class="logo__img">
+              <img src="img/Screenshot_18.jpg" alt="logo">
+            </div>
+            <h1><span class="logo-name">Александр Хрусталёв</span><span class="logo-pro">Front-End разработчик</span></h1>
+          </a>
+        </div>
+        <nav>
+          <ul id="menu" role="menu">
+            <li><a href="#section-services" role="menuitem" data-menuanchor="services">Услуги</a></li>
+            <li><a href="#section-portfolio" role="menuitem" data-menuanchor="portfolio">Портфолио</a></li>
+            <li><a href="#section-contacts" role="menuitem" data-menuanchor="contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="navBurger" role="navigation" id="navToggle"></div>
+      </div>
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1186.4 662.8" style="enable-background:new 0 0 1186.4 662.8;" xml:space="preserve">
 <g id="background">
   <rect x="-9.7" y="0" fill="#2c3e50" width="1197.1" height="662.8"/>
 </g>
@@ -184,43 +204,9 @@ H81.6z"/>
   <polygon style="fill:#9B3021;" points="850.9,515.7 851.2,513.7 919.6,513.7 920,515.7  "/>
 </g>
 </svg>
-  <div class="container">
-    <div class="about">
-      <span class="wow fadeIn" data-wow-delay="3s">Привет!</span> <span class="wow fadeIn" data-wow-delay="7s">Меня зовут Александр Хрусталёв</span>
-      <span class="wow fadeIn" data-wow-delay="10s">Я Веб-разработчик</span>
     </div>
-  </div>
-</header>
-<div class="nav-sticky">
-  <div class="logo">
-    <a href="#services">
-      <div class="logo-img">
-        <img src="img/Screenshot_18.jpg" alt="logo">
-      </div>
-      <h2>Александр Хрусталёв</h2>
-    </a>
-  </div>
-  <nav id="menu" class="wrap_menu-sticky">
-    <ul class="menu-sticky" role="menu">
-      <li><a href="#services" role="menuitem">Услуги</a></li>
-      <li><a href="#portfolio" role="menuitem">Портфолио</a></li>
-      <li><a href="#contacts" role="menuitem">Контакты</a></li>
-    </ul>
-  </nav>
-  <!--<div class="mob-menu">-->
-  <!--<nav class="overlayMenu">-->
-  <!--<ul role="menu">-->
-  <!--<li><a href="#services" role="menuitem">Услуги</a></li>-->
-  <!--<li><a href="#portfolio" role="menuitem">Портфолио</a></li>-->
-  <!--<li><a href="#contacts" role="menuitem">Контакты</a></li>-->
-  <!--</ul>-->
-  <!--</nav>-->
-  <!--</div>-->
-  
-  <div class="navBurger" role="navigation" id="navToggle"></div>
-</div>
-<div class="container-page">
-  <section id="services">
+  </header>
+  <section id="section-services" class="section">
     <div class="container">
       <h3 class="topic wow flipInY">Услуги</h3>
       <div class="item wow fadeInUp">
@@ -260,7 +246,7 @@ H81.6z"/>
       </div>
     </div>
   </section>
-  <section id="portfolio">
+  <section id="section-portfolio" class="section">
     <div class="container">
       <h3 class="topic wow flipInY">Портфолио</h3>
       <ul class="portfolio-list">
@@ -270,14 +256,6 @@ H81.6z"/>
             <h3>Администрация Усть-Кубинского района</h3>
             <p>Добавление в уже готовый сайт версию сайта для слабовидящих</p>
             <a href="http://www.kubena35.ru" class="btn">Посмотреть</a>
-          </div>
-        </li>
-        <li class="portfolio-list__item">
-          <img src="img/iskrennost.alex-khrust.net_.jpg" alt="" class="portfolio-list__item--img">
-          <div class="portfolio-list__item--caption">
-            <h3>ООО "Искренность"</h3>
-            <p>Создание многостраничного адаптивного сайта с нуля, с подключением дополнительного функционала</p>
-            <a href="http://iskrennost.alex-khrust.net/" class="btn">Посмотреть</a>
           </div>
         </li>
         <li class="portfolio-list__item">
@@ -309,54 +287,98 @@ H81.6z"/>
           </div>
         </li>
         <li class="portfolio-list__item">
-          <img src="img/www.kubena35.ru_.jpg" alt="" class="portfolio-list__item--img">
+          <img src="img/alex-khrust.github.io_american_business_index.html.jpg" alt="" class="portfolio-list__item--img">
           <div class="portfolio-list__item--caption">
             <h3>Название сайта</h3>
             <p>Описание</p>
+  
+            <a href="https://alex-khrust.github.io/american_business/index.html" class="btn">Посмотреть</a>
           </div>
         </li>
         <li class="portfolio-list__item">
-          <img src="img/www.kubena35.ru_.jpg" alt="" class="portfolio-list__item--img">
+          <img src="img/iskrennost.alex-khrust.net_.jpg" alt="" class="portfolio-list__item--img">
           <div class="portfolio-list__item--caption">
-            <h3>Название сайта</h3>
-            <p>Описание</p>
+            <h3>ООО "Искренность"</h3>
+            <p>Создание многостраничного адаптивного сайта с нуля, с подключением дополнительного функционала</p>
+            <a href="http://iskrennost.alex-khrust.net/" class="btn">Посмотреть</a>
           </div>
         </li>
-        <li class="portfolio-list__item">
-          <img src="img/www.kubena35.ru_.jpg" alt="" class="portfolio-list__item--img">
-          <div class="portfolio-list__item--caption">
-            <h3>Название сайта</h3>
-            <p>Описание</p>
-          </div>
-        </li>
-        <li class="portfolio-list__item">
-          <img src="img/www.kubena35.ru_.jpg" alt="" class="portfolio-list__item--img">
-          <div class="portfolio-list__item--caption">
-            <h3>Название сайта</h3>
-            <p>Описание</p>
-          </div>
-        </li>
+        <!--<li class="portfolio-list__item">-->
+          <!--<img src="img/alex-khrust.github.io_row-dev_test_.jpg" alt="" class="portfolio-list__item&#45;&#45;img">-->
+          <!--<div class="portfolio-list__item&#45;&#45;caption">-->
+            <!--<h3>Название сайта</h3>-->
+            <!--<p>Описание</p>-->
+  <!---->
+            <!--<a href="https://alex-khrust.github.io/row-dev_test" class="btn">Посмотреть</a>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li class="portfolio-list__item">-->
+          <!--<img src="img/alex-khrust.github.io_autoshoping_index.html.jpg" alt="" class="portfolio-list__item&#45;&#45;img">-->
+          <!--<div class="portfolio-list__item&#45;&#45;caption">-->
+            <!--<h3>Название сайта</h3>-->
+            <!--<p>Описание</p>-->
+  <!---->
+            <!--<a href="https://alex-khrust.github.io/autoshoping/index.html" class="btn">Посмотреть</a>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li class="portfolio-list__item">-->
+          <!--<img src="img/www.kubena35.ru_.jpg" alt="" class="portfolio-list__item&#45;&#45;img">-->
+          <!--<div class="portfolio-list__item&#45;&#45;caption">-->
+            <!--<h3>Название сайта</h3>-->
+            <!--<p>Описание</p>-->
+          <!--</div>-->
+        <!--</li>-->
       </ul>
     </div>
   </section>
-  <section id="contacts">
-    <div class="container">
-      <h3 class="topic wow flipInY">Контакты</h3>
-      <div class="skype">
-        <a href="skype:st.alex.ser?chat">st.alex.ser</a>
+  <section id="section-contacts" class="section">
+      <div class="container">
+        <h3 class="topic wow flipInY">Контакты</h3>
+        <div class="how">
+          <div class="skype">
+            <a title="Открыть чат со мной в Skype" href="skype:st.alex.ser?chat"><span>Skype:</span> st.alex.ser</a>
+          </div>
+          <div class="telegram">
+            <a title="Открыть чат со мной в Telegram" href="tg://resolve?domain=alex_khrust"><span>Telegram:</span> alex_khrust</a>
+          </div>
+          <div class="email">
+            <a title="Написать мне Email из приложения по умолчанию" href="mailto:st.alex.ser@gmail.com"><span>Email:</span> st.alex.ser@gmail.com</a>
+          </div>
+        </div>
+        <div class="feedback">
+          <form id="myForm" action="libs/telegram/telegram.php" method="post">
+            <!--<fieldset>-->
+              <legend> Форма обратной связи </legend>
+              <p class="user-name">
+                <!--<label for="name">Введите имя</label>-->
+                <input type="text" name="name" placeholder="Введите имя">
+              </p>
+              <p class="user-tel">
+                <!--<label for="tel">Введите телефон</label>-->
+                <input type="tel" name="tel" placeholder="Введите телефон">
+              </p>
+              <p class="user-email">
+                <!--<label for="email">Введите Email</label>-->
+                <input type="email" name="email" placeholder="Введите Email">
+              </p>
+              <p class="message">
+                <!--<label for="message">Введите сообщение</label>-->
+                <textarea name="message" id="message" cols="50" rows="7" placeholder="Введите сообщение"></textarea>
+              </p>
+              <p class="submit">
+                <input class="btn btn-submit" type="submit" value="Отправить">
+              </p>
+            <!--</fieldset>-->
+          </form>
+        </div>
       </div>
-      <div class="email">
-        <a href="mailto:st.alex.ser@gmail.com">st.alex.ser@gmail.com</a>
-      </div>
-    </div>
+    <footer>
+      ©<script type="text/javascript">var mdate = new Date();
+      document.write(mdate.getFullYear());</script>
+      Александр Хрусталёв | Portfolio
+    </footer>
   </section>
 </div>
-<footer>
-  ©
-  <script type="text/javascript">var mdate = new Date();
-  document.write(mdate.getFullYear());</script>
-  Александр Хрусталёв | Portfolio
-</footer>
 
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>

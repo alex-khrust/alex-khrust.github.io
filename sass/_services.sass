@@ -1,0 +1,33 @@
+//----- #services
+
+#section-services
+  justify-content: space-between
+  & .item
+    flex: 300px
+    min-height: 180px
+    margin: 1%
+    text-align: center
+    padding: 15px
+    align-self: stretch
+    background: snow
+    border: 2px solid lightgray
+    border-radius: 10px
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    & h3
+      margin-bottom: 15px
+
+
+.tec
+  @extend .container
+  width: 100%
+  & img
+    width: 7.5%
+    max-width: 125px
+    filter: grayscale(100%)
+    transition-duration: 0.5s
+    transition-delay: 0.2s
+    margin: 50px 0.5%
+    &:hover, .tec--active
+      filter: grayscale(0%) drop-shadow(0 10px 15px blue)
+      transform: scale(1.2) translateY(-10px)
+      margin: 50px 2%

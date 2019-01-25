@@ -2,6 +2,7 @@ var
   gulp = require('gulp'), // Подключаем Gulp
   sass = require('gulp-sass'), //Подключаем Sass пакет,
   cleanCSS = require('gulp-clean-css'), // Подключаем пакет для минификации CSS
+  cssnano = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
   browserSync = require('browser-sync'), // Подключаем Browser Sync
   concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
   uglify = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
@@ -20,7 +21,7 @@ gulp.task('sass', function () { // Создаем таск Sass
     sass(), // Преобразуем Sass в CSS посредством gulp-sass
     autoprefixer({ // Создаем префиксы
       browsers: ['last 2 versions'],
-      cascade: true
+      cascade: false
     }),
     gulp.dest('css'), // Выгружаем результата в папку src/css
     browserSync.reload({stream: true}),
@@ -43,7 +44,11 @@ gulp.task('scripts', function () {
     // 'libs/slick/slick.min.js',
     // 'libs/magnific-popup/dist/jquery.magnific-popup.min.js',
     'libs/gsap/src/minified/TweenMax.min.js',
-    'libs/wow/dist/wow.min.js'
+    'libs/wow/dist/wow.min.js',
+    'libs/paroller.js/dist/jquery.paroller.js',
+    'libs/fullPage/jquery.fullpage.extensions.min.js',
+    'libs/fullPage/scrolloverflow.min.js',
+    'libs/fullPage/fullPage.js'
   ])
     .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
     .pipe(uglify()) // Сжимаем JS файл
@@ -54,14 +59,16 @@ gulp.task('css-libs', ['sass'], function () {
   return gulp.src([ // Выбираем файл для минификации
     'libs/normalize.css/normalize.css',
     'libs/wow/css/libs/animate.css',
-    // 'css/main.css',
-    // 'libs/fullpage.js/dist/fullpage.min.css',
+    'libs/fullPage/jquery.fullpage.css',
     // 'libs/magnific-popup/dist/magnific-popup.css',
     // 'libs/slick/slick.css',
     // 'libs/slick/slick-theme.css'
   ])
     .pipe(concat('libs.css'))
-    .pipe(cleanCSS()) // Сжимаем
+    .pipe(cleanCSS({ // Сжимаем
+      level: 2
+    }))
+    // .pipe(cssnano()) // Сжимаем
     .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
     .pipe(gulp.dest('css')); // Выгружаем в папку src/css
 });
@@ -74,7 +81,7 @@ gulp.task('gulp-clean-css', ['sass'], function () {
       level: 2
     }))
     .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-    .pipe(gulp.dest('css')); // Выгружаем в папку src/css
+    .pipe(gulp.dest('dist/css')); // Выгружаем в папку src/css
 });
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function () {

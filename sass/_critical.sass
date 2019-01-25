@@ -1,0 +1,137 @@
+//@import "preloader"
+@import "all"
+@import "fonts"
+@import "hamburger"
+@import "fullPage"
+
+
+
+header
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  background: #2c3e50
+  svg
+    position: absolute
+    bottom: 0
+    object-fit: cover
+  .container
+    width: 100%
+    height: 100%
+    position: relative
+  .about
+    font-size: 4vw
+    color: white
+    text-shadow: 0 0 10px #000, 0 0 20px #000
+    @extend .container
+    flex-direction: column
+
+
+.top-nav
+  width: 100%
+  height: 100px
+  display: flex
+  justify-content: space-between
+  align-content: center
+  //background: rgba(255, 255, 255, 0.7)
+  //box-shadow: 1px 0 3px rgba(0,0,0,.3)
+  color: #FFFFFF
+  padding: 0 2%
+  position: absolute
+  top: 0
+  z-index: 1000
+  filter: drop-shadow(0 0 1px #444)
+  margin-top: 1vw
+  //&:hover
+  //  background: rgba(255, 255, 255, 1)
+  .logo
+    width: 50%
+    height: 100%
+    display: flex
+    a
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+    &__img
+      width: 15%
+      height: auto
+      border-radius: 50%
+      overflow: hidden
+      display: flex
+      justify-content: center
+      align-items: center
+      img
+        width: calc(100% + 20%)
+        height: auto
+    h1
+      width: 77%
+      height: 100%
+      max-width: 498px
+      font: 30px "Ruslan Display", cursive
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      color: #FFFFFF
+      margin: 0
+      //text-shadow: 0 0 10px #444
+      .logo-name,.logo-pro
+        width: 50%
+        height: 100%
+        display: flex
+        align-items: inherit
+      .logo-name
+        text-align: right
+        &:after
+          content: ''
+          width: 5px
+          height: 70px
+          display: flex
+          background-color: #FFFFFF
+          margin: 0 15px
+
+
+
+  nav
+    width: 50%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    ul
+      width: 100%
+      display: inline-flex
+      justify-content: space-evenly
+      font-size: 27px
+      & li
+        display: inline-flex
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
+        -webkit-backface-visibility: hidden
+        backface-visibility: hidden
+        -moz-osx-font-smoothing: grayscale
+        position: relative
+        overflow: hidden
+        padding-bottom: 5px
+        & a
+          text-decoration: none
+          color: #FFFFFF
+          &:before
+            content: ""
+            position: absolute
+            z-index: -1
+            left: 50%
+            right: 50%
+            bottom: 0
+            background: #2098d1
+            height: 3px
+            transition: all 0.3s linear
+          &:hover:before
+            left: 0
+            right: 0
+          &.active
+            &:before
+              left: 0
+              right: 0
+
+

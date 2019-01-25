@@ -1,0 +1,73 @@
+//------ #portfolio
+
+.portfolio-list
+  @extend .container
+  margin: 0 auto
+
+.portfolio-list__item
+  flex: 400px
+  min-height: 220px
+  margin: 2% 1%
+  height: 30vh
+  //border: 5px solid grey
+  padding: 0
+  overflow: hidden
+  transition-duration: 0.5s
+  box-shadow: 0 0 30px grey
+  position: relative
+  @extend .container
+  & img
+    width: 100%
+    height: auto
+    transition-duration: 0.5s
+    //object-fit: cover
+    position: absolute
+    top: 0
+  .portfolio-list__item--caption
+    width: 100%
+    height: 100%
+    @extend .container
+    position: absolute
+    color: #FFFFFF
+    padding: 15px
+    text-align: center
+    transition-duration: 0.5s
+    h3
+      width: 100%
+      transform: translateY(-30vh)
+      transition: all 0.5s ease-in-out
+      position: relative
+    p
+      width: 100%
+      transform: translateY(30vh)
+      transition: all 1s ease-in-out
+      position: relative
+  &:hover
+    //transform: scale(1.1)
+    .portfolio-list__item--caption
+      background: rgba(0, 0, 0, 0.5)
+    img
+      filter: blur(5px)
+      transform: scale(1.1)
+    .portfolio-list__item--caption h3
+      transform: translateY(0)
+      border-bottom: 1px solid white
+    .portfolio-list__item--caption p
+      transform: translateY(-5vh)
+
+.btn
+  text-decoration: none
+  padding: 15px 50px
+  font-weight: bold
+  font-size: 20px
+  letter-spacing: 1px
+  position: relative
+  background: #444444
+  color: white
+  border: 2px solid lightgray
+  border-radius: 10px
+  transition: all 300ms ease
+  box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.30), -5px -5px 20px rgba(51, 51, 51, 0.30), 5px -5px 20px rgba(51, 51, 51, 0.30), -5px 5px 20px rgba(51, 51, 51, 0.30)
+  &:hover
+    box-shadow: none
+    transform: scale(.95)

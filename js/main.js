@@ -85,7 +85,7 @@ $(document).ready(function () {
 //---------------------------------------------------------------------------
 //------------ svg animation -------------------
   var tl = new TimelineMax();
-  var bgd = $('#background rect');
+  var bgd = $('#background rect, header');
   var table = $('#table_legs, #table');
   var lampLeg = $('#lamp > .lamp-leg');
   var lampbt = $('#lamp-bottom');
@@ -120,10 +120,44 @@ $(document).ready(function () {
     .to(bgd, 0.2, {opacity: 0.1, delay: 0.5}, "a-=0.05")
     .to(bgd, 0.1, {opacity: 1}, "b-=0.05")
     .to(bgd, 0.1, {opacity: 0.5}, "c-=0.05")
-    .to(bgd, 0.2, {opacity: 1, fill: '#FDD10D'})
+    .to(bgd, 0.2, {opacity: 1, fill: '#FDD10D', background: '#FDD10D'})
     .fromTo(lampLine, 0.2, {opacity: 0}, {opacity: 0.2, delay: 0.5}, "a-=0.05")
     .to(lampLine, 0.1, {opacity: 1}, "b-=0.05")
     .to(lampLine, 0.1, {opacity: 0.5}, "c-=0.05");
 //-------------------------------------------------------------------------------
-
+//---------------- fullPage -----------------------------------------
+  $('#fullpage').fullpage({
+    anchors: ['about', 'services', 'portfolio', 'contacts'],
+    // menu: '#menu',
+    // css3: true,
+    navigation: true,
+    navigationPosition: 'right',
+    navigationTooltips: ['Приветствие', 'Услуги', 'Порфолио', 'Контакты'],
+    scrollOverflow: true,
+    sectionSelector: '.section',
+    slideSelector: '.slide',
+    slidesNavigation: true,
+    responsiveHeight: 330,
+    scrollBar:true,
+    // scrollOverflowReset: true,
+    // offsetSections: true,
+    afterRender: function(index, nextIndex, direction){
+      var el = $('section');
+      el.paroller({
+        factor: 0.5,
+        type: 'background',
+        direction: 'vertical'
+      });
+    },
+    /* We need reinitialize paroller on window resize event */
+    afterResize: function() {
+      var el = $('section');
+      el.paroller({
+        factor: 0.5,
+        type: 'background',
+        direction: 'vertical'
+      });
+    }
+  });
+//-------------------------------------------------------------------------------
 });
