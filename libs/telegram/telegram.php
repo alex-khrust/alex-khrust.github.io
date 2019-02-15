@@ -6,7 +6,7 @@
 /* https://api.telegram.org/bot740991206:AAHtILymr14vN-4ZBpxXVXpQU52FI24Wq_E/getUpdates */
 
 $name = $_POST['name'];
-$phone = $_POST['phone'];
+$phone = $_POST['tel'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 $token = "740991206:AAHtILymr14vN-4ZBpxXVXpQU52FI24Wq_E";
@@ -14,8 +14,8 @@ $chat_id = "-339029286";
 $arr = array(
   'Имя пользователя: ' => $name,
   'Телефон: ' => $phone,
-  'Email' => $email,
-  'Сообщение' => $message
+  'Email:' => $email,
+  'Сообщение:' => "<br>".$message
 );
 
 foreach($arr as $key => $value) {
