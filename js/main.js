@@ -85,7 +85,7 @@ $(document).ready(function () {
 //---------------------------------------------------------------------------
 //------------ svg animation -------------------
   var tl = new TimelineMax();
-  var bgd = $('#background rect, header');
+  var bgd = $('#background rect');
   var table = $('#table_legs, #table');
   var lampLeg = $('#lamp > .lamp-leg');
   var lampbt = $('#lamp-bottom');
@@ -160,9 +160,9 @@ $(document).ready(function () {
     }
   });
   
-  window.replainSettings = { id: '0fb0562e-fab7-4e25-9136-9c6eb3bebbfb' };
-  (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
-    var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
-  })('https://widget.replain.cc/dist/client.js');
+  // window.replainSettings = { id: '0fb0562e-fab7-4e25-9136-9c6eb3bebbfb' };
+  // (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+  //   var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+  // })('https://widget.replain.cc/dist/client.js');
 //-------------------------------------------------------------------------------
 });

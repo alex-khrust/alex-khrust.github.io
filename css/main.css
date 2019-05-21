@@ -7,7 +7,6 @@
   outline: none; }
 
 body, html {
-  background: #fdd10d;
   color: #444444;
   font-family: 'Comfortaa-Regular', cursive;
   overflow: hidden !important; }
@@ -255,23 +254,26 @@ section > .container, section > section, section > header, section > footer, hea
 .container, section, header, footer, header .about, .tec, .portfolio-list, .portfolio-list__item, .portfolio-list__item .portfolio-list__item--caption {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   position: relative; }
 
 /* Parallax container background */
+#section-about {
+  background-image: url("../img/DSC1184-min.jpg"); }
+
 #section-services {
-  background-image: url("https://www.hd-wallpapersdownload.com/script/bulk-upload/free-stock-royalty-free-photos-hd-wallpaper.jpg"); }
+  background-image: url("../img/_DSC1023-min.jpg"); }
+
+#section-portfolio {
+  background-image: url("../img/_DSC1059-min.jpg"); }
+
+#section-contacts {
+  background-image: url("../img/_DSC1056-min.jpg"); }
 
 header {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  background: #2c3e50; }
-  header svg {
-    position: absolute;
-    bottom: 0;
-    -o-object-fit: cover;
-    object-fit: cover; }
+  overflow: hidden; }
   header .container, header section, header header, header footer, header .about, header .tec, header .portfolio-list, header .portfolio-list__item, header .portfolio-list__item .portfolio-list__item--caption, .portfolio-list__item header .portfolio-list__item--caption {
     width: 100%;
     height: 100%;
@@ -686,7 +688,8 @@ footer {
   align-items: center !important;
   margin-top: 20px;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); }
   footer .topic {
     -webkit-box-pack: center !important;
     -ms-flex-pack: center !important;
