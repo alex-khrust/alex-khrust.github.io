@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function() {
 //---------- Preloader -------------------------------------------------------
 // $(window).on('load', function () {
 //     $preloader = $('.wrap_preloader'),
