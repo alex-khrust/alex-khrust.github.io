@@ -47,15 +47,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //-----------------------------------------------------------------------
 //Добавление и удаление классов по ширене экрана  ----------
-  var windowWidth = $(window).width();
-  if (windowWidth < 1280) $("#menu").addClass("mob-menu");
-  else $("#menu").removeClass("mob-menu");
+  // var wsize = 768
+  // var windowWidth = $(window).width();
+  // if (windowWidth < wsize) $("header").addClass("mob-header");
+  // else $("header").removeClass("mob-header");
   
-  $(window).resize(function () {
-    var windowWidth = $(window).width();
-    if (windowWidth < 1280) $("#menu").addClass("mob-menu");
-    else $("#menu").removeClass("mob-menu");
-  });
+  // $(window).resize(function () {
+  //   var windowWidth = $(window).width();
+  //   if (windowWidth < wsize) $("header").addClass("mob-header");
+  //   else $("header").removeClass("mob-header");
+  // });
+//----------------------------------------------------------------------------
+//Скрытие хедера при скроле вверх  ----------
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("header").style.top = "0";
+    } else {
+      document.getElementById("header").style.top = "-120px";
+    }
+    // if (prevScrollpos > currentScrollPos) {
+    //   document.getElementsByClassName("mob-header").style.top = "0";
+    // } else {
+    //   document.getElementsByClassName("mob-header").style.top = "-100px";
+    // }
+    prevScrollpos = currentScrollPos;
+  };
 //----------------------------------------------------------------------------
 //------------ wow.js --------------
 // Для упрощения добавления одинаковым элементам классов анимации - добавляю их с помощью jQuery.
