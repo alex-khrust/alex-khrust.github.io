@@ -19,8 +19,8 @@ gulp.task('browser-sync', function() {
 			// index: 'tver.html',
 		},
 		notify: false,
-		// online: false, // Work offline without internet connection
-		// tunnel: true, tunnel: 'projectname',
+		// online: true, // Work offline without internet connection
+		// tunnel: true, tunnel: 'alex-khrust.github.io',
 		// Demonstration page: http://projectname.localtunnel.me
 	})
 });
@@ -51,7 +51,7 @@ gulp.task('scripts', function() {
 		// 'libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		// 'libs/gsap/src/minified/TweenMax.min.js',
 		'libs/wow/dist/wow.min.js',
-		// 'libs/paroller.js/dist/jquery.paroller.js',
+		'libs/paroller.js/dist/jquery.paroller.js',
 		// 'libs/fullPage/jquery.fullpage.extensions.min.js',
 		// 'libs/fullPage/scrolloverflow.min.js',
 		// 'libs/fullPage/fullPage.js',

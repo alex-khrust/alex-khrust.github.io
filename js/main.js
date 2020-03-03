@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
   window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-      document.getElementById("header").style.top = "0";
+      document.getElementById("header").style.cssText = "top:0; box-shadow: 1px 0 3px rgba(0,0,0,.3);";
     } else {
       document.getElementById("header").style.top = "-120px";
     }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //------------ wow.js --------------
 // Для упрощения добавления одинаковым элементам классов анимации - добавляю их с помощью jQuery.
   $(function () {
-    // $('section') .addClass('wow fadeInUp');
+    $('section').addClass('wow fadeInUp');
     $('.topic').addClass('wow flipInY');
   });
   

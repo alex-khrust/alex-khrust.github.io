@@ -2,125 +2,135 @@
   width: 100%
   height: auto
   display: flex
-
   .container
-    // justify-content: flex-start
-    //padding-bottom: 80px
-    //align-items: flex-start
-  .contacts
-    width: 85%
-    height: auto
-    display: flex
-    align-items: flex-start
-    justify-content: center
-    margin: 20px 0
-  .contacts__list
-    width: auto
-    height: 100%
-    display: flex
-    flex-flow: row wrap
-    justify-content: center
     align-items: baseline
-    li
-      width: 100%
+    justify-content: space-between
+
+.contacts
+  width: auto
+  height: auto
+  display: flex
+  align-items: flex-start
+  justify-content: space-evenly
+  flex-flow: wrap
+  margin: 20px 0
+.contacts__list
+  width: auto
+  height: 100%
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: baseline
+  li
+    width: 100%
+    height: 35px
+    display: flex
+    align-items: center
+    position: relative
+    font-size: 25px
+    font-weight: 900
+    margin: 7px 0
+    padding-left: 50px
+    &:before
+      content: ""
+      position: absolute
+      width: 35px
       height: 35px
+      top: -3px
+      left: 0
+      display: inline-block
+      @media ( max-width: 768px )
+        top: 0
+    a
+      color: #444444
+      margin-left: 30px
+      &:hover
+        text-decoration: underline
+      @media ( max-width: 576px )
+        margin-left: 0
+        font-size: 18px
+    span
+      width: 110px
+      font-size: 20px
+      font-weight: 900
+      position: relative
       display: flex
       align-items: center
-      position: relative
-      font-size: 25px
-      font-weight: 900
-      margin: 7px 0
-      a
-        color: #444444
-        margin-left: 30px
-        &:hover
-          text-decoration: underline
-      span
-        width: 160px
-        font-size: 20px
-        font-weight: 900
-        position: relative
-        display: flex
-        align-items: center
-        padding-left: 50px
-        &:before
-          content: ""
-          position: absolute
-          width: 35px
-          height: 35px
-          top: -8px
-          left: 0
-          display: inline-block
+      @media ( max-width: 576px )
+        display: none
+        
 
-  .phone
-    & span:before
-      background: url("../img/mobile-alt-solid.svg") no-repeat center
-  .skype
-    & span:before
-      background: url("../img/skype.svg") no-repeat center
-  .telegram
-    & span:before
-      background: url("../img/telegram.svg") no-repeat center
-  .linkedin
-    & span:before
-      background: url("../img/linkedin.svg") no-repeat center
-  .facebook
-    & span:before
-      background: url("../img/facebook-f-brands.svg") no-repeat center
-  .github
-    & span:before
-      background: url("../img/github-brands.svg") no-repeat center
-  .email
-    & span:before
-      background: url("../img/envelope.svg") no-repeat center
+.phone
+  &:before
+    background: url("../img/mobile-alt-solid.svg") no-repeat center
+.skype
+  &:before
+    background: url("../img/skype.svg") no-repeat center
+.telegram
+  &:before
+    background: url("../img/telegram.svg") no-repeat center
+.linkedin
+  &:before
+    background: url("../img/linkedin.svg") no-repeat center
+.facebook
+  &:before
+    background: url("../img/facebook-f-brands.svg") no-repeat center
+.github
+  &:before
+    background: url("../img/github-brands.svg") no-repeat center
+.email
+  &:before
+    background: url("../img/envelope.svg") no-repeat center
 
-  .feedback
-    width: 50%
-    height: 100%
+.feedback
+  width: auto
+  height: auto
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  form
     display: flex
     flex-flow: column
-    justify-content: center
-    align-items: center
-    form
-      display: flex
-      flex-flow: column
-      fieldset
-        border-radius: 10px
-        padding: 20px
-      legend
-        font-size: 30px
-        font-weight: 900
-        padding: 0 15px 20px
-      p
-        width: 100%
-        display: flex
-        flex-flow: row
-        align-items: center
-        padding-bottom: 15px
-    label
-      width: 100%
-      font-size: 20px
-      font-weight: bold
-      padding-bottom: 5px
-    input, textarea
-      width: 100%
-      padding: 10px 20px
-      color: #444
-      font-size: 17px
-      //font-weight: bold
-      letter-spacing: 1px
-      background: white
-      border: 2px solid lightgray
+    fieldset
       border-radius: 10px
-    //box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.30), -5px -5px 20px rgba(51, 51, 51, 0.30), 5px -5px 20px rgba(51, 51, 51, 0.30), -5px 5px 20px rgba(51, 51, 51, 0.30)
-
-    .submit
+      border-color: #444
+      padding: 20px
+    legend
+      font-size: 30px
+      font-weight: 900
+      padding: 0 15px 0
+    div
+      width: 100%
       display: flex
-      justify-content: center
-    .btn-submit
-      width: 50%
-      margin: 30px auto 0
-      padding: 15px 50px
-      font-size: 20px
-      background: #444444
-      color: white
+      flex-flow: row
+      align-items: center
+      padding-bottom: 15px
+  label
+    width: 100%
+    font-size: 20px
+    font-weight: bold
+    padding-bottom: 5px
+  input, textarea
+    width: 100%
+    padding: 10px 20px
+    color: #444
+    font-size: 17px
+    //font-weight: bold
+    letter-spacing: 1px
+    background: white
+    border: 2px solid lightgray
+    border-radius: 10px
+  //box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.30), -5px -5px 20px rgba(51, 51, 51, 0.30), 5px -5px 20px rgba(51, 51, 51, 0.30), -5px 5px 20px rgba(51, 51, 51, 0.30)
+
+  .submit
+    display: flex
+    justify-content: center
+  .btn-submit
+    width: auto
+    margin: 30px auto 0
+    padding: 10px 20px
+    font-size: 20px
+    background: #444444
+    color: white
+    cursor: pointer

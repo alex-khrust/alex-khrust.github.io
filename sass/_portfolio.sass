@@ -1,26 +1,25 @@
-//------ #portfolio
-
 .portfolio-list
-  @extend .container
+  width: 100%
+  height: auto
+  display: flex
+  flex-flow: wrap
   margin: 0 auto
 
 .portfolio-list__item
   flex: 400px
   min-height: 220px
-  margin: 2% 1%
   height: 30vh
-  //border: 5px solid grey
-  padding: 0
-  overflow: hidden
-  transition-duration: 0.5s
+  display: flex
   box-shadow: 0 0 30px grey
+  transition-duration: 0.5s
   position: relative
-  @extend .container
+  overflow: hidden
+  padding: 0
+  margin: 2% 1%
   & img
     width: 100%
     height: auto
     transition-duration: 0.5s
-    //object-fit: cover
     position: absolute
     top: 0
   .portfolio-list__item--caption
@@ -42,6 +41,10 @@
       transform: translateY(200px)
       transition: all 0.5s ease-in-out
       position: relative
+    a
+      transform: translateY(200px)
+      transition: all 0.7s ease-in-out
+      position: relative
   &:hover
     //transform: scale(1.1)
     .portfolio-list__item--caption
@@ -52,12 +55,12 @@
     .portfolio-list__item--caption h3
       transform: translateY(0)
       border-bottom: 1px solid white
-    .portfolio-list__item--caption p
+    .portfolio-list__item--caption p, a
       transform: translateY(0px)
 
 .btn
   text-decoration: none
-  padding: 15px 50px
+  padding: 10px 20px
   font-weight: bold
   font-size: 20px
   letter-spacing: 1px
