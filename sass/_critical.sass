@@ -9,13 +9,13 @@
 header
   width: 100%
   height: 120px
-  padding: 10px 0
+  padding: 5px 0
   background: #fdd10d
   position: fixed
   top: 0
   transition: 0.3s
   z-index: 99
-  @media ( max-width: 768px )
+  @media ( max-width: 1080px )
     height: 60px
   .container
     width: 100%
@@ -35,15 +35,16 @@ header
       display: flex
       align-items: center
     &__img
-      width: auto
+      width: 110px
       height: 100%
-      max-width: 100px
       border-radius: 50%
       overflow: hidden
       display: flex
       justify-content: center
       align-items: center
-      margin-right: 10px
+      @media ( max-width: 1080px )
+        width: 50px
+        margin-right: 10px
       img
         width: auto
         height: 100%
@@ -58,7 +59,7 @@ header
       color: #444444
       margin: 0
       //text-shadow: 0 0 10px #444
-      @media ( max-width: 768px )
+      @media ( max-width: 1080px )
         font-size: 20px
         max-width: 320px
       .logo-name,.logo-pro
@@ -67,7 +68,7 @@ header
         align-items: inherit
       .logo-name
         text-align: right
-        @media ( max-width: 576px )
+        @media ( max-width: 480px )
           text-align: left
           max-width: 135px
         &:after
@@ -77,14 +78,14 @@ header
           display: flex
           background-color: #444444
           margin: 0 15px
-          @media ( max-width: 768px )
+          @media ( max-width: 1080px )
             width: 3px
             height: 100%
             margin: 0 10px
-          @media ( max-width: 576px )
+          @media ( max-width: 480px )
             display: none
       .logo-pro
-        @media ( max-width: 576px )
+        @media ( max-width: 480px )
           display: none
 
   .top-nav
@@ -96,6 +97,7 @@ header
     justify-content: space-between
     align-items: center
     color: #444444
+    margin-left: 40px
     @media ( max-width: 768px )
       display: none
   nav
@@ -109,6 +111,8 @@ header
       display: inline-flex
       justify-content: space-between
       font-size: 22px
+      @media ( max-width: 1080px )
+        font-size: 18px
       & li
         display: inline-flex
         -webkit-transform: translateZ(0)
