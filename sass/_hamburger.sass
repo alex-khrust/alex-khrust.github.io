@@ -4,14 +4,13 @@
   background: #444
   box-sizing: border-box
   background-clip: content-box
-  width: 40px
+  width: 35px
   height: 24px
   border-top: 11px solid transparent
   border-bottom: 11px solid transparent
-  -webkit-transform: rotate(0deg)
   transform: rotate(0deg)
-  -webkit-transition: all 0.25s ease-in-out
   transition: all 0.25s ease-in-out
+  -webkit-tap-highlight-color: transparent
   &:before,
   &:after 
     content: ""
@@ -27,10 +26,10 @@
     transition: all 0.5s ease
   
   &:before 
-    top: -10px
+    top: -12px
   
   &:after 
-    bottom: -10px
+    bottom: -12px
     // width: 90%
   
   &.active 

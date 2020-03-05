@@ -26,7 +26,7 @@ a
   justify-content: center
   align-items: center
   flex-wrap: wrap
-  padding: 0 2%
+  padding: 0 15px
 
 section
   width: 100%
@@ -35,12 +35,16 @@ section
 
 main
   padding-top: 170px
+  @media ( max-width: 768px )
+    padding-top: 110px
 
 .topic
   width: 100%
   margin: 15px auto 35px
   font-size: 44px
   text-align: center
+  @media ( max-width: 576px )
+    font-size: 25px
 
 section
   margin-bottom: 70px
