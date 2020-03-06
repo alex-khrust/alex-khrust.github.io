@@ -106,6 +106,8 @@ header
     display: flex
     justify-content: center
     align-items: center
+    @media ( max-width: 768px )
+      align-items: flex-start
     ul
       width: 100%
       display: inline-flex
@@ -143,4 +145,26 @@ header
               left: 0
               right: 0
 
+// nav
+//   li:nth-child(1)
+//     animation: drop-down-menu 300ms -150ms ease-in-out forwards
+    
+//   li:nth-child(2)
+//     animation: drop-down-menu 300ms 0ms ease-in-out forwards
 
+//   li:nth-child(3)
+//     animation: drop-down-menu 300ms 150ms ease-in-out forwards
+
+// @keyframes drop-down-menu 
+//   0% 
+//     opacity: 0
+//     transform: rotateX(-90deg)
+  
+//   60% 
+//     transform: rotateX(50deg)
+  
+//   100% 
+//     opacity: 1
+//     transform: rotateX(0deg)
+    
+  

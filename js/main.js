@@ -96,9 +96,14 @@ document.addEventListener("DOMContentLoaded", function() {
 //------------ menu hamburger -----------
   $("#navToggle").click(function () {
     $(this).toggleClass("active");
-    $(".mob-menu").toggleClass("open");
-    // this line ▼ prevents content scroll-behind
+    $(".top-nav").toggleClass("open");
     $("body").toggleClass("locked");
+  });
+  $(".top-nav").click(function () {
+    $(this).removeClass("active");
+    $("#navToggle").removeClass("active");
+    $(".top-nav").removeClass("open");
+    $("body").removeClass("locked");
   });
 //---------------------------------------------------------------------------
 //------------ svg animation -------------------

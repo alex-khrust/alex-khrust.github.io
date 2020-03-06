@@ -20,7 +20,7 @@ gulp.task('browser-sync', function() {
 		},
 		notify: false,
 		// online: true, // Work offline without internet connection
-		// tunnel: true, tunnel: 'alex-khrust.github.io',
+		// tunnel: true, tunnel: 'alex-khrust',
 		// Demonstration page: http://projectname.localtunnel.me
 	})
 });
