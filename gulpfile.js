@@ -57,7 +57,7 @@ gulp.task('scripts', function() {
 		// 'libs/fullPage/fullPage.js',
 		
 		'js/_libs.js', // JS libraries (all in one)
-		// 'js/_custom.js', // Custom scripts. Always at the end
+		'js/_custom.js', // Custom scripts. Always at the end
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify()) // Minify js (opt.)

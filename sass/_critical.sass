@@ -11,8 +11,8 @@ header
   height: 120px
   padding: 5px 0
   background: #fdd10d
-  position: fixed
-  top: 0
+  position: relative
+  // top: 0
   transition: 0.3s
   z-index: 99
   @media ( max-width: 1080px )
@@ -145,26 +145,11 @@ header
               left: 0
               right: 0
 
-// nav
-//   li:nth-child(1)
-//     animation: drop-down-menu 300ms -150ms ease-in-out forwards
-    
-//   li:nth-child(2)
-//     animation: drop-down-menu 300ms 0ms ease-in-out forwards
-
-//   li:nth-child(3)
-//     animation: drop-down-menu 300ms 150ms ease-in-out forwards
-
-// @keyframes drop-down-menu 
-//   0% 
-//     opacity: 0
-//     transform: rotateX(-90deg)
-  
-//   60% 
-//     transform: rotateX(50deg)
-  
-//   100% 
-//     opacity: 1
-//     transform: rotateX(0deg)
-    
-  
+.mob-header
+  position: fixed
+  top: 0
+  left: 0
+  box-shadow: 0 0 7px rgba(0,0,0,.3)
+  transition-duration: .5s
+  transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 )
+  transition-property: transform

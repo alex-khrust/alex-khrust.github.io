@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
   window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-      document.getElementById("header").style.cssText = "top:0; box-shadow: 1px 0 3px rgba(0,0,0,.3);";
+      document.getElementById("header").style.cssText = "top:0; box-shadow:0 0 7px rgba(0,0,0,.3);";
     } else {
       document.getElementById("header").style.top = "-120px";
     }
