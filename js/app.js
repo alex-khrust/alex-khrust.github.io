@@ -1,22 +1,57 @@
 import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
 // require('./other_script.js') // Require Other Script(s) from app/js folder Example
-// require ('@fancyapps/fancybox/dist/jquery.fancybox');
-// require ('swiper/swiper-bundle');
-require ('wowjs/dist/wow');
+import WOW from 'wowjs/dist/wow.min';
+// require('wowjs/dist/wow.min');
+// require('@fancyapps/fancybox/dist/jquery.fancybox');
+// require('swiper/swiper-bundle');
 
 document.addEventListener('DOMContentLoaded', () => {
 
 	// Custom JS
-//---------- Preloader -------------------------------------------------------
-// $(window).on('load', function () {
-//     $preloader = $('.wrap_preloader'),
-//         $loader = $preloader.find('.cssload-loader');
-//     $loader.fadeOut();
-//     $preloader.delay(350).fadeOut('slow');
-// });
-//------------------------------------------------------------------------------
-// Скрипт для присвоения пункту меню класса актив при скролле ---------------
-  
+  //---------- Preloader -------------------------------------------------------
+  // $(window).on('load', function () {
+  //     $preloader = $('.wrap_preloader'),
+  //         $loader = $preloader.find('.cssload-loader');
+  //     $loader.fadeOut();
+  //     $preloader.delay(350).fadeOut('slow');
+  // });
+  //------------------------------------------------------------------------------
+  //------------ menu hamburger ----------------------------------
+  $("#navToggle").click(function () {
+    $(this).toggleClass("active");
+    $(".top-nav").toggleClass("open");
+    $("body").toggleClass("locked");
+  });
+  $(".top-nav").click(function () {
+    $(this).removeClass("active");
+    $("#navToggle").removeClass("active");
+    $(".top-nav").removeClass("open");
+    $("body").removeClass("locked");
+  });
+  //---------------------------------------------------------------------------
+  //------------ wow.js ---------------------------------------------
+  // Для упрощения добавления одинаковым элементам классов анимации - добавляю их с помощью jQuery.
+  $('section').addClass('wow fadeInUp');
+  $('.topic').addClass('wow flipInY');
+
+  wow = new WOW(
+    {
+      boxClass: 'wow',      // default
+      animateClass: 'animated', // default
+      offset: 150,          // default
+      mobile: false,       // default
+      live: true,        // default
+      callback:     function(box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+      },
+      scrollContainer: null,    // optional scroll container selector, otherwise use window,
+      resetAnimation: true,     // reset animation on end (default is true)
+    }
+  );
+  wow.init();
+  //-------------------------------------------------------------------------
+  // Скрипт для присвоения пункту меню класса актив при скролле ---------------
   $(document).on("scroll", onScroll);
   
   $('a[href^="#"]').on('click', function (e) {
@@ -51,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLink.removeClass("active");
       }
     });
-  }
+  };
 
 //-----------------------------------------------------------------------
 //Добавление и удаление классов по ширене экрана  ----------
@@ -83,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //   prevScrollpos = currentScrollPos;
   // };
 
-  ;( function ( document, window, index )
+  ( function ( document, window, index )
 	{
 		'use strict';
 
@@ -129,40 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}( document, window, 0 ));
 //----------------------------------------------------------------------------
-//------------ wow.js ---------------------------------------------
-// Для упрощения добавления одинаковым элементам классов анимации - добавляю их с помощью jQuery.
-  $(function () {
-    $('section').addClass('wow fadeInUp');
-    $('.topic').addClass('wow flipInY');
-  });
-  
-  wow = new WOW(
-    {
-      boxClass: 'wow',      // default
-      animateClass: 'animated', // default
-      offset: 150,          // default
-      mobile: false,       // default
-      live: true        // default
-    }
-  );
-  wow.init();
-//-------------------------------------------------------------------------
-//------------ menu hamburger ----------------------------------
-  $("#navToggle").click(function () {
-    $(this).toggleClass("active");
-    $(".top-nav").toggleClass("open");
-    $("body").toggleClass("locked");
-  });
-  $(".top-nav").click(function () {
-    $(this).removeClass("active");
-    $("#navToggle").removeClass("active");
-    $(".top-nav").removeClass("open");
-    $("body").removeClass("locked");
-  });
-//---------------------------------------------------------------------------
   // window.replainSettings = { id: '0fb0562e-fab7-4e25-9136-9c6eb3bebbfb' };
   // (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
   //   var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
   // })('https://widget.replain.cc/dist/client.js');
 //--------------------------------------------------------------------------
-});
+})
