@@ -32,7 +32,8 @@ function scripts() {
 			rules: [
 				{
 					test: /\.(js)$/,
-					exclude: /(node_modules)/,
+					// exclude: /(node_modules)/,
+					exclude: /(libs)/,
 					loader: 'babel-loader',
 					query: {
 						presets: ['@babel/env']
