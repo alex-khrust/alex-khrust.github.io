@@ -1,0 +1,29 @@
+.tec
+  width: 100%
+  height: auto
+  margin: 70px auto 25px
+  // display: grid
+  // grid-template-columns: repeat(auto-fill, minmax(auto, 100px))
+  // grid-template-rows: minmax(auto, 80px)
+  // grid-auto-flow: row
+  // grid-gap: 10px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  // flex-flow: wrap
+  & img
+    // width: auto
+    // height: 80px
+    // max-width: 80%
+    max-height: 80px
+    width: 7.5%
+    max-width: 125px
+    margin: 0 .5%
+    // margin: 0 auto
+    object-fit: contain
+    filter: grayscale(100%)
+    transition-duration: 0.3s
+    transition-delay: 0.2s
+    &:hover
+      filter: grayscale(0%) drop-shadow(0 10px 15px blue)
+      transform: scale(1.2) translateY(-10px)

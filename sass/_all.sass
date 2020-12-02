@@ -1,3 +1,14 @@
+html
+  height: 100%
+body
+  min-height: 100%
+  display: flex
+  flex-flow: column
+main
+  flex: 1 0 auto
+footer
+  flex-shrink: 0
+  
 *
   margin: 0
   padding: 0
@@ -19,10 +30,15 @@ a
 a, button, .btn, .navBurger
   -webkit-tap-highlight-color: transparent
 
+main
+  @media (max-width: 768px)
+    padding-top: 60px
+    
+
 .container
   width: 100%
   height: auto
-  // max-width: 1200px
+  max-width: 1320px
   margin: 0 auto
   display: flex
   justify-content: center
@@ -34,11 +50,6 @@ section
   width: 100%
   height: auto
   position: relative
-
-main
-  padding-top: 60px
-  @media ( max-width: 1080px )
-    padding-top: 60px
 
 .topic
   width: 100%

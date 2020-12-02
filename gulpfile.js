@@ -1,127 +1,99 @@
-var gulp         = require('gulp'),
-		sass         = require('gulp-sass'),
-		browserSync  = require('browser-sync').create(),
-		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglify-es').default,
-		cleancss     = require('gulp-clean-css'),
-		autoprefixer = require('gulp-autoprefixer'),
-		rsync        = require('gulp-rsync'),
-		newer        = require('gulp-newer'),
-		rename       = require('gulp-rename'),
-		responsive   = require('gulp-responsive'),
-		del          = require('del');
+let fileswatch = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
+baseDir      = '.' // Base directory path without «/» at the end
 
-// Local Server
-gulp.task('browser-sync', function() {
+const { src, dest, parallel, series, watch } = require('gulp')
+const browserSync  = require('browser-sync').create()
+const webpack      = require('webpack-stream')
+const sass         = require('gulp-sass')
+const autoprefixer = require('gulp-autoprefixer')
+const rename       = require('gulp-rename')
+const imagemin     = require('gulp-imagemin')
+const newer        = require('gulp-newer')
+const rsync        = require('gulp-rsync')
+const del          = require('del')
+
+function browsersync() {
 	browserSync.init({
-		server: {
-			baseDir: '.',
-			// index: 'tver.html',
-		},
+		server: { baseDir: baseDir + '/' },
 		notify: false,
-		// online: true, // Work offline without internet connection
-		// tunnel: true, tunnel: 'alex-khrust',
-		// Demonstration page: http://projectname.localtunnel.me
+		online: true,
+		// tunnel: true, tunnel: "dev",
+		// socket: {
+    //   domain: "localhost:8000"
+    // }
 	})
-});
-function bsReload(done) { browserSync.reload(); done(); };
+}
 
-// Custom Styles
-gulp.task('styles', function() {
-	return gulp.src('sass/**/*.sass')
-	.pipe(sass({
-		outputStyle: 'expanded',
-		includePaths: [__dirname + '/node_modules']
-	}))
-	.pipe(concat('styles.min.css'))
-	.pipe(autoprefixer({
-		grid: false,
-		overrideBrowserslist: ['last 10 versions']
-	}))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(gulp.dest('css'))
+function scripts() {
+	return src(baseDir + '/js/app.js')
+	.pipe(webpack({
+		mode: 'production',
+		module: {
+			rules: [
+				{
+					test: /\.(js)$/,
+					exclude: /(node_modules)/,
+					loader: 'babel-loader',
+					query: {
+						presets: ['@babel/env']
+					}
+				}
+			]
+		}
+	})).on('error', function handleError() {
+		this.emit('end')
+	})
+	.pipe(rename('app.min.js'))
+	.pipe(dest(baseDir + '/js'))
 	.pipe(browserSync.stream())
-});
+}
 
-// Scripts & JS Libraries
-gulp.task('scripts', function() {
-	return gulp.src([
-		'node_modules/jquery/dist/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
-		// 'node_modules/swiper/js/swiper.min.js', // Слайдер Swiper
-		// 'libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-		// 'libs/gsap/src/minified/TweenMax.min.js',
-		'libs/wow/dist/wow.min.js',
-		'libs/paroller.js/dist/jquery.paroller.js',
-		// 'libs/fullPage/jquery.fullpage.extensions.min.js',
-		// 'libs/fullPage/scrolloverflow.min.js',
-		// 'libs/fullPage/fullPage.js',
-		
-		'js/_libs.js', // JS libraries (all in one)
-		'js/_custom.js', // Custom scripts. Always at the end
-		])
-	.pipe(concat('libs.min.js'))
-	.pipe(uglify()) // Minify js (opt.)
-	.pipe(gulp.dest('js'))
-	.pipe(browserSync.reload({ stream: true }))
-});
+function styles() {
+	return src(baseDir + '/sass/app.sass')
+	.pipe(sass({ outputStyle: 'compressed' }))
+	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
+	.pipe(rename('app.min.css'))
+	.pipe(dest(baseDir + '/css'))
+	.pipe(browserSync.stream())
+}
 
-// Responsive Images
-var quality = 95; // Responsive images quality
+function images() {
+	return src(baseDir + '/img/src/**/*')
+	.pipe(newer(baseDir + '/img/dest'))
+	.pipe(imagemin())
+	.pipe(dest(baseDir + '/img/dest'))
+}
 
-// Produce @1x images
-gulp.task('img-responsive-1x', async function() {
-	return gulp.src('img/_src/**/*.{png,jpg,jpeg,webp,raw}')
-		.pipe(newer('img/@1x'))
-		.pipe(responsive({
-			'**/*': { width: '50%', quality: quality }
-		})).on('error', function (e) { console.log(e) })
-		.pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
-		.pipe(gulp.dest('img/@1x'))
-});
-// Produce @2x images
-gulp.task('img-responsive-2x', async function() {
-	return gulp.src('img/_src/**/*.{png,jpg,jpeg,webp,raw}')
-		.pipe(newer('img/@2x'))
-		.pipe(responsive({
-			'**/*': { width: '100%', quality: quality }
-		})).on('error', function (e) { console.log(e) })
-		.pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
-		.pipe(gulp.dest('img/@2x'))
-});
-gulp.task('img', gulp.series('img-responsive-1x', 'img-responsive-2x', bsReload));
+function cleanimg() {
+	return del(baseDir + '/img/dest/**/*', { force: true })
+}
 
-// Clean @*x IMG's
-gulp.task('cleanimg', function() {
-	return del(['img/@*'], { force: true })
-});
-
-// Code & Reload
-gulp.task('code', function() {
-	return gulp.src('**/*.html')
-	.pipe(browserSync.reload({ stream: true }))
-});
-
-// Deploy
-gulp.task('rsync', function() {
-	return gulp.src('')
+function deploy() {
+	return src(baseDir + '/')
 	.pipe(rsync({
-		root: '',
+		root: baseDir + '/',
 		hostname: 'username@yousite.com',
 		destination: 'yousite/public_html/',
-		// include: ['*.htaccess'], // Included files
-		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excluded files
+		include: [/* '*.htaccess' */], // Included files to deploy,
+		exclude: [ '**/Thumbs.db', '**/*.DS_Store' ],
 		recursive: true,
 		archive: true,
 		silent: false,
 		compress: true
 	}))
-});
+}
 
-gulp.task('watch', function() {
-	gulp.watch('sass/**/*.sass', gulp.parallel('styles'));
-	gulp.watch(['js/_custom.js', 'js/_libs.js'], gulp.parallel('scripts'));
-	gulp.watch('*.html', gulp.parallel('code'));
-	gulp.watch('img/_src/**/*', gulp.parallel('img'));
-});
+function startwatch() {
+	watch(baseDir + '/sass/**/*', { usePolling: true }, styles)
+	watch([baseDir + '/js/**/*.js','!' + baseDir + '/js/**/*.min.js'], { usePolling: true }, scripts)
+	watch(baseDir + '/img/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
+	watch(baseDir + `/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
+}
 
-gulp.task('default', gulp.parallel('img', 'styles', 'scripts', 'browser-sync', 'watch'));
+exports.assets   = series(cleanimg, scripts, images)
+exports.scripts  = scripts
+exports.styles   = styles
+exports.images   = images
+exports.cleanimg = cleanimg
+exports.deploy   = deploy
+exports.default  = series(scripts, images, styles, parallel(browsersync, startwatch))
