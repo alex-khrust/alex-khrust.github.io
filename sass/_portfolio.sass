@@ -4,7 +4,7 @@
   margin: 0 auto
   display: grid
   grid-template-columns: repeat(auto-fill, minmax(auto, 405px))
-  grid-template-rows: minmax(220px, 30vh)
+  grid-template-rows: repeat(auto-fill, minmax(220px, 30vh))
   grid-auto-flow: row
   grid-gap: 30px
   align-items: center
@@ -12,9 +12,10 @@
 
 .portfolio-list__item
   flex: 400px
-  min-height: 220px
-  height: 30vh
   max-width: 405px
+  height: 100%
+  min-height: 220px
+  max-height: 30vh
   display: flex
   box-shadow: 0 0 30px grey
   transition-duration: 0.5s
@@ -23,7 +24,8 @@
   padding: 0
   & img
     width: 100%
-    height: auto
+    height: 100%
+    object-fit: cover
     transition-duration: 0.5s
     position: absolute
     top: 0

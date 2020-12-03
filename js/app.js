@@ -34,59 +34,59 @@ document.addEventListener('DOMContentLoaded', () => {
   $('section').addClass('wow fadeInUp');
   $('.topic').addClass('wow flipInY');
 
-  wow = new WOW(
-    {
-      boxClass: 'wow',      // default
-      animateClass: 'animated', // default
-      offset: 150,          // default
-      mobile: false,       // default
-      live: true,        // default
-      callback:     function(box) {
-        // the callback is fired every time an animation is started
-        // the argument that is passed in is the DOM node being animated
-      },
-      scrollContainer: null,    // optional scroll container selector, otherwise use window,
-      resetAnimation: true,     // reset animation on end (default is true)
-    }
-  );
-  wow.init();
+  // wow = new WOW(
+  //   {
+  //     boxClass: 'wow',      // default
+  //     animateClass: 'animated', // default
+  //     offset: 150,          // default
+  //     mobile: false,       // default
+  //     live: true,        // default
+  //     callback:     function(box) {
+  //       // the callback is fired every time an animation is started
+  //       // the argument that is passed in is the DOM node being animated
+  //     },
+  //     scrollContainer: null,    // optional scroll container selector, otherwise use window,
+  //     resetAnimation: true,     // reset animation on end (default is true)
+  //   }
+  // );
+  // wow.init();
   //-------------------------------------------------------------------------
   // Скрипт для присвоения пункту меню класса актив при скролле ---------------
-  $(document).on("scroll", onScroll);
+  // $(document).on("scroll", onScroll);
   
-  $('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    $(document).off("scroll");
+  // $('a[href^="#"]').on('click', function (e) {
+  //   e.preventDefault();
+  //   $(document).off("scroll");
     
-    $('a').each(function () {
-      $(this).removeClass('active');
-    });
-    $(this).addClass('active');
+  //   $('a').each(function () {
+  //     $(this).removeClass('active');
+  //   });
+  //   $(this).addClass('active');
     
-    var target = this.hash;
-    $target = $(target);
-    $('html, body').stop().animate({
-      'scrollTop': $target.offset().top + 2
-    }, 500, 'swing', function () {
-      window.location.hash = target;
-      $(document).on("scroll", onScroll);
-    });
-  });
+  //   var target = this.hash;
+  //   $target = $(target);
+  //   $('html, body').stop().animate({
+  //     'scrollTop': $target.offset().top + 2
+  //   }, 500, 'swing', function () {
+  //     window.location.hash = target;
+  //     $(document).on("scroll", onScroll);
+  //   });
+  // });
   
-  function onScroll(event) {
-    var scrollPosition = $(document).scrollTop();
-    $('nav a').each(function () {
-      var currentLink = $(this);
-      var refElement = $(currentLink.attr("href"));
-      if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
-        $('nav ul li a').removeClass("active");
-        currentLink.addClass("active");
-      }
-      else {
-        currentLink.removeClass("active");
-      }
-    });
-  };
+  // function onScroll(event) {
+  //   var scrollPosition = $(document).scrollTop();
+  //   $('nav a').each(function () {
+  //     var currentLink = $(this);
+  //     var refElement = $(currentLink.attr("href"));
+  //     if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+  //       $('nav ul li a').removeClass("active");
+  //       currentLink.addClass("active");
+  //     }
+  //     else {
+  //       currentLink.removeClass("active");
+  //     }
+  //   });
+  // };
 
 //-----------------------------------------------------------------------
 //Добавление и удаление классов по ширене экрана  ----------
