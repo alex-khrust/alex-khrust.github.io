@@ -25,8 +25,8 @@
   <meta property="og:site_name" content="Александр Хрусталёв | Portfolio">
 
   <title>Александр Хрусталёв | Portfolio</title>
-  <link rel="icon" href="img/favicon-portfolio.png" type="image/x-icon">
-  <link rel="shortcut icon" href="img/favicon-portfolio.png" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="css/app.min.css">
 </head>
@@ -36,23 +36,54 @@
   <header id="header">
     <div class="container">
       <div class="logo">
-        <a href="#">
-          <div class="logo__img">
-            <img src="img/dest/logo.jpg" alt="logo">
-          </div>
-          <h1><span class="logo-name">Александр Хрусталёв</span><span class="logo-pro">Front-End разработчик</span></h1>
-        </a>
+        <div class="logo__img">
+          <img class="img" src="img/dest/logo.jpg" alt="logo">
+        </div>
+        <div class="logo__name">
+          <span class="name">Александр Хрусталёв</span>
+          <span class="pro">Front-End разработчик</span>
+        </div>
       </div>
-      <div class="top-nav">
-        <nav>
-          <ul id="menu" role="menu">
-            <li><a href="#section-portfolio" role="menuitem" data-menuanchor="portfolio">Портфолио</a></li>
-            <li><a href="#section-services" role="menuitem" data-menuanchor="services">Услуги</a></li>
-            <!-- <li><a href="#section-about" role="menuitem" data-menuanchor="about">Обо мне</a></li> -->
-            <li><a href="#section-contacts" role="menuitem" data-menuanchor="contacts">Контакты</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="top-nav">
+        <ul id="menu" role="menu">
+          <li>
+            <a href="#section-portfolio" role="menuitem" data-menuanchor="portfolio">
+              <span>П</span>
+              <span>о</span>
+              <span>р</span>
+              <span>т</span>
+              <span>ф</span>
+              <span>о</span>
+              <span>л</span>
+              <span>и</span>
+              <span>о</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#section-services" role="menuitem" data-menuanchor="services">
+              <span>У</span>
+              <span>с</span>
+              <span>л</span>
+              <span>у</span>
+              <span>г</span>
+              <span>и</span>
+            </a>
+          </li> -->
+          <!-- <li><a href="#section-about" role="menuitem" data-menuanchor="about">Обо мне</a></li> -->
+          <li>
+            <a href="#section-contacts" role="menuitem" data-menuanchor="contacts">
+              <span>К</span>
+              <span>о</span>
+              <span>н</span>
+              <span>т</span>
+              <span>а</span>
+              <span>к</span>
+              <span>т</span>
+              <span>ы</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div class="navBurger" role="navigation" id="navToggle"></div>
     </div>
   </header>
@@ -60,84 +91,119 @@
   <main class="content">
     <section id="section-portfolio">
       <div class="container">
-        <h3 class="topic wow flipInY">Примеры моих работ</h3>
+        <h1 class="topic wow flipInY">Примеры моих работ</h1>
         <ul class="portfolio-list">
           <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/vitoslavica.ru.jpg" alt="vitoslavica.ru"
-              class="img">
+            <img class="img" src="img/dest/projects/crop/mariupolauto.jpg" alt="mariupolauto.com"
+             >
+            <div class="description">
+              <h3>Сайт перевозчика "ЧАО Мариуполь-Авто"</h3>
+              <p>Посадка на CMS WordPress</p>
+              <a href="https://mariupolauto.com/" class="btn">Демо</a>
+            </div>
+          </li>
+          <li class="portfolio-list__item">
+            <img class="img" src="img/dest/projects/crop/salons.jpg" alt="salons"
+             >
+            <div class="description">
+              <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
+              <p>Адаптивная вёрстка</p>
+              <a href="https://alex-khrust.github.io/salons" class="btn">Демо</a>
+            </div>
+          </li>
+          <li class="portfolio-list__item">
+            <img class="img" src="img/dest/projects/crop/zno-courses-student-main.jpg" alt="zno-courses">
+            <div class="description">
+              <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
+              <p>Адаптивная вёрстка</p>
+              <a href="https://alex-khrust.github.io/zno-courses/student-main.html" class="btn">Демо</a>
+            </div>
+          </li>
+          <li class="portfolio-list__item">
+            <img class="img" src="img/dest/projects/crop/SaveItForMe-black.jpg" alt="SaveItForMe"
+             >
             <div class="description">
               <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
               <p>Адаптивная вёрстка после редизайна по PSD</p>
-              <a href="https://alex-khrust.github.io/vitoslavica.ru/" class="btn">Перейти на сайт</a>
+              <a href="https://alex-khrust.github.io/SaveItForMe" class="btn">Демо</a>
             </div>
           </li>
           <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/AutoRepair.jpg" alt="AutoRepair" class="img">
+            <img class="img" src="img/dest/projects/crop/vitoslavica.ru.jpg" alt="vitoslavica.ru"
+             >
+            <div class="description">
+              <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
+              <p>Адаптивная вёрстка после редизайна по PSD</p>
+              <a href="https://alex-khrust.github.io/vitoslavica.ru/" class="btn">Демо</a>
+            </div>
+          </li>
+          <li class="portfolio-list__item">
+            <img class="img" src="img/dest/projects/crop/AutoRepair.jpg" alt="AutoRepair">
             <div class="description">
               <h3>Сайт каталог - Автосервиса</h3>
               <p>Адаптивная, резиновая вёрстка по PSD, с подключением дополнительного функционала</p>
-              <a href="https://alex-khrust.github.io/AutoRepair/" class="btn">Перейти на сайт</a>
+              <a href="https://alex-khrust.github.io/AutoRepair/" class="btn">Демо</a>
             </div>
           </li>
           <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/avoid-bounces.png" alt="avoidbounce.com"
-              class="img">
+            <img class="img" src="img/dest/projects/crop/avoid-bounces.png" alt="avoidbounce.com"
+             >
             <div class="description">
               <h3>Сайт валидации Email адресов avoidbounce.com</h3>
               <p>Верстка сайта по PSD</p>
-              <a href="https://alex-khrust.github.io/avoid-bounces/" class="btn">Перейти на сайт</a>
+              <a href="https://alex-khrust.github.io/avoid-bounces/" class="btn">Демо</a>
             </div>
           </li>
           <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/praces.com.ua.jpg" alt="praces.com.ua" class="img">
+            <img class="img" src="img/dest/projects/crop/praces.com.ua.jpg" alt="praces.com.ua">
             <div class="description">
               <h3>PRaces - брендиноговое агенство</h3>
               <p>Адаптивная, резиновая вёрстка с нуля по макету PSD, с подключением слайдера, галлереи, модального окна
                 и
                 формой обратной связи</p>
-              <a href="http://praces.com.ua" class="btn">Перейти на сайт</a>
+              <a href="http://praces.com.ua" class="btn">Демо</a>
             </div>
           </li>
-          <!-- <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/devorno.ru.jpg" alt="devorno.ru" class="img">
+          <li class="portfolio-list__item">
+            <img class="img" src="img/dest/projects/crop/devorno.ru.jpg" alt="devorno.ru">
             <div class="description">
               <h3>Devorno - Веб-студия</h3>
               <p>Адаптивная, резиновая вёрстка после редизайна, с подключением дополнительного функцион</p>
-              <a href="http://devorno.ru" class="btn">Перейти на сайт</a>
+              <a href="http://devorno.ru" class="btn">Демо</a>
             </div>
-          </li> -->
+          </li>
           <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/kubena35.ru_.jpg" alt="kubena35.ru" class="img">
+            <img class="img" src="img/dest/projects/crop/kubena35.ru_.jpg" alt="kubena35.ru">
             <div class="description">
               <h3>Администрация Усть-Кубинского района</h3>
               <p>Добавление в уже готовый сайт версию сайта для слабовидящих</p>
-              <a href="http://www.kubena35.ru" class="btn">Перейти на сайт</a>
+              <a href="http://www.kubena35.ru" class="btn">Демо</a>
             </div>
           </li>
           <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/american_business.jpg" alt="american_business"
-              class="img">
+            <img class="img" src="img/dest/projects/crop/american_business.jpg" alt="american_business"
+             >
             <div class="description">
               <h3>Название сайта</h3>
               <p>Описание</p>
-              <a href="https://alex-khrust.github.io/american_business/index.html" class="btn">Перейти на сайт</a>
+              <a href="https://alex-khrust.github.io/american_business/index.html" class="btn">Демо</a>
             </div>
           </li>
-          <!-- <li class="portfolio-list__item">
-            <img src="img/dest/projects/crop/Peugeot_Trnava.jpg" alt="Peugeot_Trnava" class="img">
+          <li class="portfolio-list__item">
+            <img class="img" src="img/dest/projects/crop/Peugeot_Trnava.jpg" alt="Peugeot_Trnava">
             <div class="description">
               <h3>Лендинг по трудоустройству на завод Peugeot Slovakia</h3>
               <p>Адаптивная вёрстка после редизайна по PSD</p>
-              <a href="https://alex-khrust.github.io/peugeot.lux-expres.com" class="btn">Перейти на сайт</a>
+              <a href="https://alex-khrust.github.io/peugeot.lux-expres.com" class="btn">Демо</a>
             </div>
-          </li> -->
+          </li>
         </ul>
       </div>
     </section>
     <!-- /#section-portfolio -->
-    <section id="section-services">
+    <!-- <section id="section-services">
       <div class="container">
-        <h3 class="topic wow flipInY">Услуги</h3>
+        <h2 class="topic wow flipInY">Услуги</h2>
         <div class="item wow fadeInUp">
           <h3>HTML-верстка по макету/дизайну/PSD</h3>
           <p>Верстка сайта (статичная, адаптивная, резиновая, адаптивно-резиновая) чистый, грамотный, валидный код
@@ -166,41 +232,41 @@
             анимации</p>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- /#section-services -->
     <!-- <section class="section-about">
       <div class="container">
-        <h3 class="topic wow flipInY">Обо мне</h3>
+        <h2 class="topic wow flipInY">Обо мне</h2>
 
       </div>
     </section> -->
     <!-- /#section-about -->
     <section id="section-contacts">
       <div class="container">
-        <h3 class="topic wow flipInY">Контакты</h3>
+        <h2 class="topic wow flipInY">Контакты</h2>
         <div class="contacts">
           <ul class="contacts__list">
-            <li class="phone">
-              <span>Телефон:</span><a title="Позвонить мне по телефону" href="tel:+380982305202">+380 98 230 52 02</a>
+            <li class="telegram">
+              <span>Telegram:</span><a title="Открыть чат со мной в Telegram"
+                href="tg://resolve?domain=alex_khrust">t.me/alex_khrust</a>
             </li>
             <li class="skype">
               <span>Skype:</span><a title="Открыть чат со мной в Skype" href="skype:st.alex.ser?chat">st.alex.ser</a>
             </li>
-            <li class="telegram">
-              <span>Telegram:</span><a title="Открыть чат со мной в Telegram"
-                href="tg://resolve?domain=alex_khrust">@alex_khrust</a>
-            </li>
             <li class="linkedin">
               <span>Linkedin:</span><a title="Моя страница в linkedin"
-                href="https://www.linkedin.com/in/alex-khrust">linkedin.com/in/alex-khrust</a>
+              href="https://www.linkedin.com/in/alex-khrust">linkedin.com/in/alex-khrust</a>
             </li>
             <li class="facebook">
               <span>Facebook:</span><a title="Моя страница в facebook"
-                href="https://www.facebook.com/alex.khrust">facebook.com/alex.khrust</a>
+              href="https://www.facebook.com/alex.khrust">facebook.com/alex.khrust</a>
             </li>
             <li class="github">
               <span>Github:</span><a title="Мой профиль в github"
-                href="https://github.com/alex-khrust">github.com/alex-khrust</a>
+              href="https://github.com/alex-khrust">github.com/alex-khrust</a>
+            </li>
+            <li class="phone">
+              <span>Телефон:</span><a title="Позвонить мне по телефону" href="tel:+380982305202">+380 98 230 52 02</a>
             </li>
             <li class="email">
               <span>Email:</span><a title="Написать мне Email"
@@ -210,7 +276,7 @@
           <!-- <ul class="contacts__list">
           </ul> -->
         </div>
-        <div class="feedback">
+        <!-- <div class="feedback">
           <form id="myForm" action="https://mariupolauto.com/telegram.php" method="post"
             enctype="multipart/form-data">
             <fieldset>
@@ -232,15 +298,15 @@
                 <textarea name="message" id="message" cols="50" rows="7" placeholder="Введите сообщение"
                   required></textarea>
               </div>
-              <!-- <div class="uesr-file">
+              <div class="uesr-file">
                 <input type="file" name="file" id="file">
-              </div> -->
+              </div>
               <div class="submit">
                 <input class="btn btn-submit" type="submit" value="Отправить">
               </div>
             </fieldset>
           </form>
-        </div>
+        </div> -->
         <div class="tec">
           <img src="img/dest/icons/HTML5-Logo.png" alt="HTML5"> 
           <img src="img/dest/icons/css3.gif" alt="CSS3">
@@ -265,8 +331,9 @@
     Александр Хрусталёв | Portfolio
   </footer>
   <!-- /footer -->
-
-  <script src="js/app.min.js"></script>
+  
+  <script src="js/libs.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
