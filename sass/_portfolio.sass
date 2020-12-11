@@ -1,9 +1,47 @@
+#section-portfolio
+  .filter-btns
+    width: 100%
+    height: auto
+    margin-bottom: 40px
+    // display: grid
+    // grid-auto-flow: column
+    display: flex
+    flex-flow: wrap
+    gap: 15px
+    row-gap: 8px
+    align-items: center
+    justify-content: center
+    button
+      width: auto
+      height: 30px
+      padding: 0 14px
+      border-radius: 30px
+      border: 2px solid #444
+      text-transform: uppercase
+      font-size: 14px
+      font-weight: 700
+      line-height: 1
+      color: #444
+      display: flex
+      align-items: center
+      justify-content: center
+      background: none
+      cursor: pointer
+      transition: .3s
+      box-shadow: none
+      transform: none
+      &:hover,
+      &:active,
+      &.active
+        background: #444
+        color: #ffae4a
+
 .portfolio-list
   width: 100%
   height: auto
   margin: 0 auto
   display: grid
-  grid-template-columns: repeat(auto-fill, minmax(auto, 405px))
+  grid-template-columns: repeat(auto-fit, minmax(auto, 405px))
   grid-template-rows: repeat(auto-fill, minmax(220px, 30vh))
   grid-auto-flow: row
   grid-gap: 30px
@@ -16,12 +54,14 @@
   height: 100%
   min-height: 220px
   max-height: 30vh
-  display: flex
-  box-shadow: 0 0 30px grey
+  display: none
+  box-shadow: 0 0 30px #0000007c
   transition-duration: 0.5s
   position: relative
   overflow: hidden
   padding: 0
+  &.show
+    display: flex
   & img
     width: 100%
     height: auto
@@ -46,25 +86,29 @@
     p
       width: 100%
       transform: translateY(200px)
-      transition: all 0.5s ease-in-out
+      transition: all 0.7s ease-in-out
       position: relative
     a
       transform: translateY(200px)
-      transition: all 0.7s ease-in-out
+      transition: all 0.5s ease-in-out
       position: relative
   &:hover
     //transform: scale(1.1)
-    .description
-      background: rgba(0, 0, 0, 0.5)
+    // box-shadow: 0 0 30px #000000bb
     img
       filter: blur(5px)
       transform: scale(1.1)
+    .description
+      background: rgba(0, 0, 0, 0.5)
     .description h3
       transform: translateY(0)
       border-bottom: 1px solid white
     .description p, a
       transform: translateY(0px)
-
+    .description p
+      transition: all 0.5s ease-in-out
+    .description a
+      transition: all 0.7s ease-in-out
 .btn
   text-decoration: none
   padding: 10px 20px

@@ -92,26 +92,36 @@
     <section id="section-portfolio">
       <div class="container">
         <h1 class="topic wow flipInY">Примеры моих работ</h1>
+
+        <div class="filter-btns" id="filter-btns">
+          <button class="btn active" onclick="filterSelection('all')">Все</button>
+          <button class="btn" onclick="filterSelection('shop')">Магазин</button>
+          <button class="btn" onclick="filterSelection('presentation')">Визитка</button>
+          <button class="btn" onclick="filterSelection('catalog')">Каталог</button>
+          <button class="btn" onclick="filterSelection('portal')">Портал</button>
+          <button class="btn" onclick="filterSelection('corporation')">Корпоративный</button>
+          <button class="btn" onclick="filterSelection('landing')">landing page</button>
+          <button class="btn" onclick="filterSelection('administration')">Админка</button>
+        </div>
+
         <ul class="portfolio-list">
-          <li class="portfolio-list__item">
-            <img class="img" src="img/dest/projects/crop/mariupolauto.jpg" alt="mariupolauto.com"
-             >
+          <li class="portfolio-list__item corporation">
+            <img class="img" src="img/dest/projects/crop/mariupolauto.jpg" alt="mariupolauto.com">
             <div class="description">
               <h3>Сайт перевозчика "ЧАО Мариуполь-Авто"</h3>
               <p>Посадка на CMS WordPress</p>
               <a href="https://mariupolauto.com/" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
-            <img class="img" src="img/dest/projects/crop/salons.jpg" alt="salons"
-             >
+          <li class="portfolio-list__item catalog">
+            <img class="img" src="img/dest/projects/crop/salons.jpg" alt="salons">
             <div class="description">
               <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
               <p>Адаптивная вёрстка</p>
               <a href="https://alex-khrust.github.io/salons" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item administration">
             <img class="img" src="img/dest/projects/crop/zno-courses-student-main.jpg" alt="zno-courses">
             <div class="description">
               <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
@@ -120,24 +130,22 @@
             </div>
           </li>
           <li class="portfolio-list__item">
-            <img class="img" src="img/dest/projects/crop/SaveItForMe-black.jpg" alt="SaveItForMe"
-             >
+            <img class="img" src="img/dest/projects/crop/SaveItForMe-black.jpg" alt="SaveItForMe">
             <div class="description">
               <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
               <p>Адаптивная вёрстка после редизайна по PSD</p>
               <a href="https://alex-khrust.github.io/SaveItForMe" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
-            <img class="img" src="img/dest/projects/crop/vitoslavica.ru.jpg" alt="vitoslavica.ru"
-             >
+          <li class="portfolio-list__item catalog">
+            <img class="img" src="img/dest/projects/crop/vitoslavica.ru.jpg" alt="vitoslavica.ru">
             <div class="description">
               <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
               <p>Адаптивная вёрстка после редизайна по PSD</p>
               <a href="https://alex-khrust.github.io/vitoslavica.ru/" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item shop">
             <img class="img" src="img/dest/projects/crop/AutoRepair.jpg" alt="AutoRepair">
             <div class="description">
               <h3>Сайт каталог - Автосервиса</h3>
@@ -145,26 +153,23 @@
               <a href="https://alex-khrust.github.io/AutoRepair/" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
-            <img class="img" src="img/dest/projects/crop/avoid-bounces.png" alt="avoidbounce.com"
-             >
+          <li class="portfolio-list__item presentation">
+            <img class="img" src="img/dest/projects/crop/avoid-bounces.png" alt="avoidbounce.com">
             <div class="description">
               <h3>Сайт валидации Email адресов avoidbounce.com</h3>
               <p>Верстка сайта по PSD</p>
               <a href="https://alex-khrust.github.io/avoid-bounces/" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item presentation">
             <img class="img" src="img/dest/projects/crop/praces.com.ua.jpg" alt="praces.com.ua">
             <div class="description">
               <h3>PRaces - брендиноговое агенство</h3>
-              <p>Адаптивная, резиновая вёрстка с нуля по макету PSD, с подключением слайдера, галлереи, модального окна
-                и
-                формой обратной связи</p>
+              <p>Адаптивная, резиновая вёрстка с нуля по макету PSD, с подключением слайдера, галлереи, модального окна и формой обратной связи</p>
               <a href="http://praces.com.ua" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item landing">
             <img class="img" src="img/dest/projects/crop/devorno.ru.jpg" alt="devorno.ru">
             <div class="description">
               <h3>Devorno - Веб-студия</h3>
@@ -172,7 +177,7 @@
               <a href="http://devorno.ru" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item portal">
             <img class="img" src="img/dest/projects/crop/kubena35.ru_.jpg" alt="kubena35.ru">
             <div class="description">
               <h3>Администрация Усть-Кубинского района</h3>
@@ -180,16 +185,15 @@
               <a href="http://www.kubena35.ru" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
-            <img class="img" src="img/dest/projects/crop/american_business.jpg" alt="american_business"
-             >
+          <li class="portfolio-list__item presentation">
+            <img class="img" src="img/dest/projects/crop/american_business.jpg" alt="american_business">
             <div class="description">
               <h3>Название сайта</h3>
               <p>Описание</p>
               <a href="https://alex-khrust.github.io/american_business/index.html" class="btn">Демо</a>
             </div>
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item presentation">
             <img class="img" src="img/dest/projects/crop/Peugeot_Trnava.jpg" alt="Peugeot_Trnava">
             <div class="description">
               <h3>Лендинг по трудоустройству на завод Peugeot Slovakia</h3>
@@ -207,7 +211,7 @@
         <div class="item wow fadeInUp">
           <h3>HTML-верстка по макету/дизайну/PSD</h3>
           <p>Верстка сайта (статичная, адаптивная, резиновая, адаптивно-резиновая) чистый, грамотный, валидный код
-            соблюдая все стандарты W3C</p>
+            соблюдая все стандарты C</p>
         </div>
         <div class="item wow fadeInUp" data-wow-delay="0.2s">
           <h3>Установка дополнительного функционала</h3>
@@ -334,6 +338,50 @@
   
   <script src="js/libs.min.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("portfolio-list__item");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("filter-btns");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
 </body>
 
 </html>
