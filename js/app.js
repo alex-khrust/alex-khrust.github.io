@@ -161,6 +161,39 @@ document.addEventListener("DOMContentLoaded", function() {
   //   var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
   // })('https://widget.replain.cc/dist/client.js');
 //--------------------------------------------------------------------------
-  
+//Замена src у iframe на href ссылки по клику -----------------------------
+  $('.url').on('click', function(e){
+    e.preventDefault();
+    $('.popup.active iframe').attr('src', this.href);
+  })
+//------------------------------------------------------------------------
+  var open_popup_btn = $('.portfolio-list__item .description > .btn');
+  var close_popup_btn = $('.close-btn');
+
+  open_popup_btn.on('click', function(e){
+    var this_parent = $(this).closest('.portfolio-list__item');
+    
+    e.preventDefault();
+    $('body').addClass('locked');
+    this_parent.find('.popup-overlay , .popup').addClass('active');
+    this_parent.find('iframe').attr('src', this.href);
+  })
+
+  close_popup_btn.on('click', function(){
+    $('.popup-overlay , .popup').removeClass('active');
+    setTimeout(function() {
+      $('body').removeClass('locked');
+    }, 300)
+  })
+
+  $(window).on('click', function(event) {
+    if (event.$target == '.popup') {
+      $('.popup-overlay , .popup').removeClass('active');
+      setTimeout(function() {
+        $('body').removeClass('locked');
+      }, 300)
+    }
+  })
+
 //--------------------------------------------------------------------------
 })

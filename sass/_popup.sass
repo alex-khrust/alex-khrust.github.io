@@ -1,0 +1,338 @@
+$speed: 0.6s
+$delay: .3s
+$easing: cubic-bezier(.55,0,.1,1)
+
+.close-btn
+  width: 40px
+  height: 40px
+  position: absolute
+  top: -40px
+  right: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  background: #ffffff
+  border-radius: 50%
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.31)
+  cursor: pointer
+  z-index: 777
+  transition: opacity $speed $easing, transform $speed $easing
+  transition-delay: $delay
+  @media ( min-width: 768px )
+    top: -55px
+    right: -15px
+  span
+    width: 24px
+    height: 2px
+    position: relative
+    &:before,
+    &:after
+      content: ""
+      position: absolute
+      left: 0
+      height: inherit
+      width: 110%
+      background: $txt
+      border-radius: 2px
+    &:before
+      top: 0
+      -webkit-transform: rotate(45deg)
+      transform: rotate(45deg)
+    &:after
+      bottom: 0
+      -webkit-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+
+// @media (max-width: 768px)
+.locked
+  overflow: hidden
+
+
+.popup-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 100
+  display: flex
+  align-items: center
+  justify-content: center
+  background: linear-gradient( 38deg, rgba(255, 174, 74, 0.8) 0%, rgba(255, 174, 74, 0.81) 99%)
+  opacity: 0
+  visibility: hidden
+  backface-visibility: hidden
+  transition: opacity $speed $easing, visibility $speed $easing
+  @media ( min-width: 768px )
+    padding: 20px
+  &.active
+    opacity: 1
+    visibility: visible
+    overflow: auto
+
+.popup
+  width: 100%
+  height: 100%
+  padding: 10px 0 10px 10px
+  background-color: #ffffff
+  box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: 0
+  // overflow-y: auto
+  overflow: visible
+  z-index: 999
+  visibility: hidden
+  backface-visibility: hidden
+  transform: scale(1.2)
+  transition: all $speed $easing
+  @media ( min-width: 768px )
+    border-radius: 20px
+  &.active
+    visibility: visible
+    opacity: 1
+    transform: scale(1)
+
+    .popup__content
+      opacity: 1
+
+    .close-btn
+      transform: translateY(40px)
+      opacity: 1
+
+  &__content
+    width: 100%
+    height: 100%
+    opacity: 0
+    backface-visibility: hidden
+    transition: opacity $speed $easing
+    transition-delay: $delay
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    @media ( min-width: 768px )
+      border-radius: 15px 0 0 15px
+
+
+.popup
+  ::-webkit-scrollbar
+      width: 12px
+  ::-webkit-scrollbar-track
+      border-radius: 10px
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+      background: $txt
+  ::-webkit-scrollbar-thumb
+      border-radius: 10px
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
+      background: #00ccff
+  
+.project
+  width: 100%
+  height: 100%
+  padding-right: 10px
+  overflow: auto
+  h3
+    font-size: 24px
+    font-weight: 900
+    text-align: center
+    margin: 20px 0 30px
+  &__desc
+    width: 100%
+    height: auto
+    min-height: 300px
+    margin-bottom: 50px
+    border-radius: 15px
+    overflow-y: auto
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+    grid-template-rows: repeat(auto-fit, minmax(auto, 100%))
+    grid-gap: 15px
+    grid-template-areas: "tasks write-up pages" "tasks timing pages"
+    &>div
+      width: auto
+      height: auto
+      padding: 15px
+      border-radius: 10px
+      background: rgba(0, 0, 0, 0.025)
+      border: 1px solid rgba(0, 0, 0, 0.3)
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset
+      h4
+        font-size: 18px
+        font-weight: 900
+      ol
+        margin-top: 10px
+        list-style-position: inside
+        
+    .tasks
+      grid-area: tasks
+    .timing
+      grid-area: timing
+    .write-up
+      grid-area: write-up
+    .pages
+      grid-area: pages
+
+  iframe
+    width: 100%
+    height: 100%
+    pointer-events: auto
+    border: 1px solid rgba(0, 0, 0, 0.3)
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+// .popup-overlay
+//   z-index: 200
+//   &.active
+//     opacity: 1
+//     visibility: visible
+//     overflow: hidden
+
+// .popup-content
+//   justify-content: flex-start
+
+
+
+
+
+// /**
+//  * Variables
+//  */
+// $speed: 0.6s
+// $delay: $speed*.3s
+// $easing: cubic-bezier(.55,0,.1,1)
+
+
+// /**
+//  * Base styles
+//  */
+
+// /**
+//  * Overlay
+//  * -- only show for tablet and up
+//  */
+// @media only screen and (min-width: 40em)
+//   .popup-overlay
+//     display: flex
+//     align-items: center
+//     justify-content: center
+//     position: fixed
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     z-index: 5
+//     background: linear-gradient( 38deg, rgba(82, 64, 172, 0.8) 0%, rgba(148, 103, 210, 0.81) 99%)
+//     opacity: 0
+//     visibility: hidden
+//     backface-visibility: hidden
+//     transition: opacity $speed $easing, visibility $speed $easing
+//     &.active
+//       opacity: 1
+//       visibility: visible
+//       overflow: hidden
+      
+// // media query
+// /**
+//  * popup
+//  */
+// .popup
+//   width: 1030px
+//   height: 596px
+//   background-color: #fff
+//   border-radius: 20px
+//   box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
+//   display: flex
+//   align-items: center
+//   justify-content: center
+//   position: relative
+//   margin: 0 auto
+//   max-width: 75rem
+//   min-height: 20rem
+//   padding: 1rem
+//   opacity: 0
+//   overflow-y: auto
+//   z-index: 7
+//   visibility: hidden
+//   backface-visibility: hidden
+//   transform: scale(1.2)
+//   transition: all $speed $easing
+
+//   .close-btn
+//     width: 1.75em
+//     height: 1.75em
+//     position: absolute
+//     cursor: pointer
+//     top: 5px
+//     right: 15px
+//     opacity: 0
+//     backface-visibility: hidden
+//     transition: opacity $speed $easing, transform $speed $easing
+//     transition-delay: $delay
+  
+//  // close popup
+
+//   .popup-content
+//     width: 100%
+//     height: 100%
+//     opacity: 0
+//     backface-visibility: hidden
+//     transition: opacity $speed $easing
+//     transition-delay: $delay
+//     display: flex
+//     flex-flow: column
+//     justify-content: center
+//     align-items: center
+//  // content
+
+//   &.active
+//     visibility: visible
+//     opacity: 1
+//     transform: scale(1)
+
+//     .popup-content
+//       opacity: 1
+  
+
+//     .close-btn
+//       transform: translateY(10px)
+//       opacity: 1
+  
+
+
+
+
+
+// /**
+//  * Mobile styling
+//  */
+// @media only screen and (max-width: 39.9375em)
+//   .popup
+//     position: fixed
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     -webkit-overflow-scrolling: touch
+//     border-radius: 0
+//     transform: scale(1.1)
+//     padding: 0 !important
+
+
+//   .close-popup
+//     right: 20px !important
