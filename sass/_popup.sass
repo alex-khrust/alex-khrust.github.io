@@ -144,7 +144,7 @@ $easing: cubic-bezier(.55,0,.1,1)
     width: 100%
     height: auto
     min-height: 300px
-    margin-bottom: 50px
+    margin-bottom: 20px
     border-radius: 15px
     overflow-y: auto
     display: grid
@@ -165,21 +165,141 @@ $easing: cubic-bezier(.55,0,.1,1)
         font-size: 18px
         font-weight: 900
       ol
+        list-style: none
         margin-top: 10px
         list-style-position: inside
         
     .tasks
       grid-area: tasks
+      p
+        margin-top: 30px
+
+    .tasks, 
+    .write-up
+      ol
+        list-style: none
+        li
+          padding-left: 15px
+          margin-bottom: 5px
+          position: relative
+          &:before
+            content: ''
+            width: 5px
+            height: 5px
+            position: absolute
+            top: 7px
+            left: 0
+            background: #00ccff
+            border-radius: 50%
+            overflow: hidden
     .timing
       grid-area: timing
+      display: flex
+      align-items: center
+      justify-content: space-between
     .write-up
       grid-area: write-up
     .pages
       grid-area: pages
+      ol
+        list-style: none
+        counter-reset: counter
+        margin-top: 10px
+        list-style-position: inside
+        li
+          height: auto
+          // min-height: 22px
+          // margin-bottom: 3px
+          display: flex
+          align-items: center
+          counter-increment: counter
+          position: relative
+          padding-left: 20px
+          margin-left: 10px
+          // background: $bg
+          // border-radius: 5px
+          // transition: .3s
+          &:before
+            contain: ''
+            width: 20px
+            height: 20px
+            position: absolute
+            top: 50%
+            left: -10px
+            transform: translateY(-50%)
+            content: counter(counter)
+          //   margin-right: 10px
+          //   display: inline-flex
+          //   align-items: center
+          //   font-weight: bold
+          //   justify-content: center
+          //   font-size: 12px
+          //   line-height: 1
+          //   background: #00ccff
+          //   color: #ffffff
+          //   border-radius: 50%
+          //   border: 2px solid #fff
+          //   overflow: hidden
+          // &:hover
+          //   background: lighten($bg, 15%)
+          a
+            // width: 100%
+            // height: 100%
+            color: $txt
+            transition: .3s
+            position: relative
+            &:before
+              content: ""
+              position: absolute
+              width: 0
+              height: 2px
+              right: 0
+              bottom: 0
+              background: $txt
+              transition: all 0.5s
+            &:hover,
+            &:active,
+            &.active
+              font-weight: 900
+              &:before
+                width: 100%
+                left: 0
+
+  .production
+    width: 100%
+    height: auto
+    display: flex
+    align-items: center
+    a
+      margin-left: auto
+      font-size: 22px
+      font-weight: bold
+      color: $txt
+      display: flex
+      text-decoration: none
+      position: relative
+      @media ( max-width: 768px )
+        font-size: 18px
+      &:before
+        content: ""
+        position: absolute
+        width: 0
+        height: 2px
+        right: 0
+        bottom: 0
+        background: $txt
+        transition: all 0.5s
+      &:hover,
+      &:active,
+      &.active
+        &:before
+          width: 100%
+          left: 0
 
   iframe
     width: 100%
     height: 100%
+    margin-top: 20px
     pointer-events: auto
     border: 1px solid rgba(0, 0, 0, 0.3)
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset

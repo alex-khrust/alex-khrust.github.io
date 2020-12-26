@@ -162,9 +162,19 @@ document.addEventListener("DOMContentLoaded", function() {
   // })('https://widget.replain.cc/dist/client.js');
 //--------------------------------------------------------------------------
 //Замена src у iframe на href ссылки по клику -----------------------------
-  $('.url').on('click', function(e){
+  $('.pages a , .url').on('click', function(e){
     e.preventDefault();
     $('.popup.active iframe').attr('src', this.href);
+    
+    $('.pages a').each(function () {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
+    
+    var this_parent = $(this).closest('.portfolio-list__item');
+    $('.project').animate({
+      scrollTop: this_parent.find('iframe').offset().top
+    }, 1000);
   })
 //------------------------------------------------------------------------
   var open_popup_btn = $('.portfolio-list__item .description > .btn');
@@ -184,16 +194,17 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
       $('body').removeClass('locked');
     }, 300)
+    $('.pages a').removeClass('active');
   })
 
-  $(window).on('click', function(event) {
-    if (event.$target == '.popup') {
-      $('.popup-overlay , .popup').removeClass('active');
-      setTimeout(function() {
-        $('body').removeClass('locked');
-      }, 300)
-    }
-  })
+  // $(window).on('click', function(event) {
+  //   if (event.$target == '.popup') {
+  //     $('.popup-overlay , .popup').removeClass('active');
+  //     setTimeout(function() {
+  //       $('body').removeClass('locked');
+  //     }, 300)
+  //   }
+  // })
 
 //--------------------------------------------------------------------------
 })
