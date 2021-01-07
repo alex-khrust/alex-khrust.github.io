@@ -3,12 +3,9 @@
     width: 100%
     height: auto
     margin-bottom: 40px
-    // display: grid
-    // grid-auto-flow: column
     display: flex
     flex-flow: wrap
-    gap: 15px
-    row-gap: 8px
+    gap: 8px 15px
     align-items: center
     justify-content: center
     button
@@ -54,14 +51,18 @@
   height: 100%
   min-height: 220px
   max-height: 30vh
-  display: none
+  // display: none
+  display: flex
   box-shadow: 0 0 30px #0000007c
   transition-duration: 0.5s
+  transition: .350s ease
   position: relative
   overflow: hidden
   padding: 0
+  transform: scale(0)
   &.show
-    display: flex
+    // display: flex
+    transform: unset
   & img
     width: 100%
     height: auto
@@ -88,7 +89,13 @@
       transform: translateY(200px)
       transition: all 0.7s ease-in-out
       position: relative
-    a
+      a
+        display: inline-flex
+        color: #fff
+        font-weight: bold
+        // text-shadow: 0 0 2px #fff
+        text-decoration: underline
+    .btn
       transform: translateY(200px)
       transition: all 0.5s ease-in-out
       position: relative
@@ -103,11 +110,11 @@
     .description h3
       transform: translateY(0)
       border-bottom: 1px solid white
-    .description p, a
+    .description p, .btn
       transform: translateY(0px)
     .description p
       transition: all 0.5s ease-in-out
-    .description a
+    .description .btn
       transition: all 0.7s ease-in-out
 .btn
   text-decoration: none
@@ -121,7 +128,10 @@
   border: 2px solid lightgray
   border-radius: 10px
   transition: all 300ms ease
-  box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.30), -5px -5px 20px rgba(51, 51, 51, 0.30), 5px -5px 20px rgba(51, 51, 51, 0.30), -5px 5px 20px rgba(51, 51, 51, 0.30)
+  // box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.30), -5px -5px 20px rgba(51, 51, 51, 0.30), 5px -5px 20px rgba(51, 51, 51, 0.30), -5px 5px 20px rgba(51, 51, 51, 0.30)
   &:hover
     box-shadow: none
+    background: #ffffff
+    color: #444
+    border: 2px solid #444
     transform: scale(.95)

@@ -87,25 +87,25 @@
       <div class="navBurger" role="navigation" id="navToggle"></div>
     </div>
   </header>
-  <!-- /hedaer -->
+  <!-- /header -->
   <main class="content">
     <section id="section-portfolio">
       <div class="container">
         <h1 class="topic wow flipInY">Примеры моих работ</h1>
 
         <div class="filter-btns" id="filter-btns">
-          <button class="btn active" onclick="filterSelection('all')">Все</button>
-          <button class="btn" onclick="filterSelection('shop')">Магазин</button>
-          <button class="btn" onclick="filterSelection('presentation')">Визитка</button>
-          <button class="btn" onclick="filterSelection('catalog')">Каталог</button>
-          <button class="btn" onclick="filterSelection('portal')">Портал</button>
-          <button class="btn" onclick="filterSelection('corporation')">Корпоративный</button>
-          <button class="btn" onclick="filterSelection('landing')">landing page</button>
-          <button class="btn" onclick="filterSelection('administration')">Админка</button>
+          <button class="btn active" data-rel="portfolio-list__item">Все</button>
+          <button class="btn" data-rel="shop">Магазин</button>
+          <button class="btn" data-rel="presentation">Визитка</button>
+          <button class="btn" data-rel="catalog">Каталог</button>
+          <button class="btn" data-rel="portal">Портал</button>
+          <button class="btn" data-rel="corporation">Корпоративный</button>
+          <button class="btn" data-rel="landing">landing page</button>
+          <button class="btn" data-rel="administration">Админка</button>
         </div>
 
         <ul class="portfolio-list">
-          <li class="portfolio-list__item corporation">
+          <li class="portfolio-list__item show corporation">
             <img class="img" src="img/dest/projects/crop/mariupolauto.jpg" alt="mariupolauto.com">
             <div class="description">
               <h3>Сайт перевозчика ЧАО "Мариуполь-Авто"</h3>
@@ -132,7 +132,8 @@
                           <li>Добавить возможность пользователям комментировать статьи.</li>
                         </ol>
 
-                        <p>Был старый сайт 2012 года, без адаптива под мобильные устройства, и с уже устаревшей информацией.</p>
+                        <p>Был старый сайт 2012 года, без адаптива под мобильные устройства, и с уже устаревшей
+                          информацией.</p>
                       </div>
                       <div class="timing">
                         <h4>Сроки выполнения:</h4>
@@ -144,7 +145,8 @@
                           <li>В HTML добавлена семантика.</li>
                           <li>Сайт адаптирован под мобильные устройства.</li>
                           <li>Посадка вёрстки на CMS WordPress.</li>
-                          <li>Добавлены новые страницы с таблицами расписаний рейсов, устаревший контент обновлён либо удалён.</li>
+                          <li>Добавлены новые страницы с таблицами расписаний рейсов, устаревший контент обновлён либо
+                            удалён.</li>
                           <li>Добавлена портнёрская форма заказов билетов онлайн Frame InBus.</li>
                           <li>Добавлен плагин WordPress для вывода постов со стены страницы предприятия в Facebook.</li>
                           <li>Добавлен плагин комментариев Facebook на стринцы с расписанием рейсов.</li>
@@ -158,17 +160,66 @@
                         <ol>
                           <li><a href="https://mariupolauto.com/">Главная</a></li>
                           <li><a href="https://mariupolauto.com/%d0%be-%d0%bd%d0%b0%d1%81/">О нас</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/">Контакты</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b1%d1%96%d0%bb%d0%be%d1%81%d0%b0%d1%80%d0%b0%d0%b9%d1%81%d1%8c%d0%ba%d0%b0-%d0%ba%d0%be%d1%81%d0%b0/">Маріуполь – Білосарайська Коса</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b0%d1%81-2-%d0%b7%d0%b0%d1%85%d0%b0%d1%80%d1%97%d0%b2%d0%ba%d0%b0-%d0%b7%d0%b0/">Маріуполь – Захар’ївка</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%ba%d1%80%d0%b5%d0%bc%d0%b5%d0%bd%d1%96%d0%b2%d0%ba%d0%b0/">Маріуполь — Кременівка</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bc%d0%b0%d0%ba%d0%b5%d0%b4%d0%be%d0%bd%d1%96%d0%b2%d0%ba%d0%b0/">Маріуполь — Македонівка</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bc%d0%b0%d0%bd%d0%b3%d1%83%d1%88/">Маріуполь – Мангуш</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bc%d0%b5%d0%bb%d0%b5%d0%ba%d1%96%d0%bd%d0%b5/">Маріуполь – Мелекіне</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bd%d1%96%d0%ba%d0%be%d0%bb%d1%8c%d1%81%d1%8c%d0%ba%d0%b5/">Маріуполь — Нікольське</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b0%d1%81-2-%d1%83%d1%80%d0%b7%d1%83%d1%84-%d0%b7%d0%b0/">Маріуполь – Урзуф</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%88%d0%b5%d0%b2%d1%87%d0%b5%d0%bd%d0%b8/">Маріуполь — Шевчени</a></li>
-                          <li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%81%d0%b2%d1%8f%d1%82%d0%be%d0%b3%d1%96%d1%80%d1%81%d1%8c%d0%ba/">Маріуполь — Святогірськ</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b0%d1%81-2-%d1%81%d1%94%d0%b2%d1%94%d1%80%d0%be%d0%b4%d0%be%d0%bd%d0%b5%d1%86%d1%8c%d0%ba/">Маріуполь — Сєвєродонецьк</a></li><li><a href="https://mariupolauto.com/%d1%81%d1%94%d0%b2%d1%94%d1%80%d0%be%d0%b4%d0%be%d0%bd%d0%b5%d1%86%d1%8c%d0%ba-%d0%b1%d0%b5%d1%80%d0%b4%d1%8f%d0%bd%d1%81%d1%8c%d0%ba/">Сєвєродонецьк — Бердянськ</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%ba%d0%b8%d1%97%d0%b2-%d0%bb%d1%8e%d0%b1%d0%bb%d1%96%d0%bd/">Маріуполь – Київ — Люблін</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%be%d0%b4%d0%b5%d1%81%d0%b0/">Маріуполь — Одеса</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b7%d0%b0%d0%bf%d0%be%d1%80%d1%96%d0%b6%d0%b6%d1%8f/">Маріуполь — Запоріжжя</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bd%d0%be%d0%b2%d0%be%d1%82%d1%80%d0%be%d1%97%d1%86%d1%8c%d0%ba%d0%b5/">Маріуполь — Новотроїцьке</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%81%d0%bb%d0%be%d0%b2%d1%8f%d0%bd%d1%81%d1%8c%d0%ba/">Маріуполь — Слов’янськ</a></li><li><a href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%81%d0%be%d1%84%d1%96%d1%8f/">Маріуполь — Софія</a></li><li><a href="https://mariupolauto.com/%d0%b4%d0%bd%d1%96%d0%bf%d1%80%d0%be-%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c/">Дніпро — Маріуполь</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/">Контакты</a>
+                          </li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b1%d1%96%d0%bb%d0%be%d1%81%d0%b0%d1%80%d0%b0%d0%b9%d1%81%d1%8c%d0%ba%d0%b0-%d0%ba%d0%be%d1%81%d0%b0/">Маріуполь
+                              – Білосарайська Коса</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b0%d1%81-2-%d0%b7%d0%b0%d1%85%d0%b0%d1%80%d1%97%d0%b2%d0%ba%d0%b0-%d0%b7%d0%b0/">Маріуполь
+                              – Захар’ївка</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%ba%d1%80%d0%b5%d0%bc%d0%b5%d0%bd%d1%96%d0%b2%d0%ba%d0%b0/">Маріуполь
+                              — Кременівка</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bc%d0%b0%d0%ba%d0%b5%d0%b4%d0%be%d0%bd%d1%96%d0%b2%d0%ba%d0%b0/">Маріуполь
+                              — Македонівка</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bc%d0%b0%d0%bd%d0%b3%d1%83%d1%88/">Маріуполь
+                              – Мангуш</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bc%d0%b5%d0%bb%d0%b5%d0%ba%d1%96%d0%bd%d0%b5/">Маріуполь
+                              – Мелекіне</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bd%d1%96%d0%ba%d0%be%d0%bb%d1%8c%d1%81%d1%8c%d0%ba%d0%b5/">Маріуполь
+                              — Нікольське</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b0%d1%81-2-%d1%83%d1%80%d0%b7%d1%83%d1%84-%d0%b7%d0%b0/">Маріуполь
+                              – Урзуф</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%88%d0%b5%d0%b2%d1%87%d0%b5%d0%bd%d0%b8/">Маріуполь
+                              — Шевчени</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%81%d0%b2%d1%8f%d1%82%d0%be%d0%b3%d1%96%d1%80%d1%81%d1%8c%d0%ba/">Маріуполь
+                              — Святогірськ</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b0%d1%81-2-%d1%81%d1%94%d0%b2%d1%94%d1%80%d0%be%d0%b4%d0%be%d0%bd%d0%b5%d1%86%d1%8c%d0%ba/">Маріуполь
+                              — Сєвєродонецьк</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d1%81%d1%94%d0%b2%d1%94%d1%80%d0%be%d0%b4%d0%be%d0%bd%d0%b5%d1%86%d1%8c%d0%ba-%d0%b1%d0%b5%d1%80%d0%b4%d1%8f%d0%bd%d1%81%d1%8c%d0%ba/">Сєвєродонецьк
+                              — Бердянськ</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%ba%d0%b8%d1%97%d0%b2-%d0%bb%d1%8e%d0%b1%d0%bb%d1%96%d0%bd/">Маріуполь
+                              – Київ — Люблін</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%be%d0%b4%d0%b5%d1%81%d0%b0/">Маріуполь
+                              — Одеса</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%b7%d0%b0%d0%bf%d0%be%d1%80%d1%96%d0%b6%d0%b6%d1%8f/">Маріуполь
+                              — Запоріжжя</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d0%bd%d0%be%d0%b2%d0%be%d1%82%d1%80%d0%be%d1%97%d1%86%d1%8c%d0%ba%d0%b5/">Маріуполь
+                              — Новотроїцьке</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%81%d0%bb%d0%be%d0%b2%d1%8f%d0%bd%d1%81%d1%8c%d0%ba/">Маріуполь
+                              — Слов’янськ</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c-%d1%81%d0%be%d1%84%d1%96%d1%8f/">Маріуполь
+                              — Софія</a></li>
+                          <li><a
+                              href="https://mariupolauto.com/%d0%b4%d0%bd%d1%96%d0%bf%d1%80%d0%be-%d0%bc%d0%b0%d1%80%d1%96%d1%83%d0%bf%d0%be%d0%bb%d1%8c/">Дніпро
+                              — Маріуполь</a></li>
                         </ol>
                       </div>
                     </div>
@@ -183,7 +234,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item catalog">
+          <li class="portfolio-list__item show catalog">
             <img class="img" src="img/dest/projects/crop/salons.jpg" alt="salons">
             <div class="description">
               <h3>Сайт католог BeautyClick</h3>
@@ -222,22 +273,28 @@
                           <li><a href="https://alex-khrust.github.io/salons/video.html">Видео</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/timetable.html">Расписание</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/tariffs.html">Тарифы</a></li>
-                          <li><a href="https://alex-khrust.github.io/salons/sign-up-radio.html">Вход/Регистрация</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/sign-up-radio.html">Вход/Регистрация</a>
+                          </li>
                           <li><a href="https://alex-khrust.github.io/salons/staff.html">Сотрудники</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/services__list.html">Услуги</a></li>
-                          <li><a href="https://alex-khrust.github.io/salons/search-results.html">Результаты поиска</a></li>
-                          <li><a href="https://alex-khrust.github.io/salons/schedule-new.html">График работы мастера</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/search-results.html">Результаты поиска</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/salons/schedule-new.html">График работы мастера</a>
+                          </li>
                           <li><a href="https://alex-khrust.github.io/salons/salon-info.html">О салоне</a></li>
                           <!-- <li><a href="https://alex-khrust.github.io/salons/salon-info copy.html">salon-info copy.html</a></li> -->
-                          <li><a href="https://alex-khrust.github.io/salons/registration-salon.html">Регистрация салона</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/registration-salon.html">Регистрация
+                              салона</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/products.html">Товары</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/product.html">О товаре</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/product-add.html">Добавть товар</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/master-info.html">Мастер</a></li>
-                          <li><a href="https://alex-khrust.github.io/salons/master-calendar__list.html">График работы мастера</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/master-calendar__list.html">График работы
+                              мастера</a></li>
                           <!-- <li><a href="https://alex-khrust.github.io/salons/master-calendar.html">Календарь мастера</a></li> -->
                           <!-- <li><a href="https://alex-khrust.github.io/salons/master-calendar-new.html">Календарь мастера</a></li> -->
-                          <li><a href="https://alex-khrust.github.io/salons/master-calendar copy.html">Календарь мастера</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/master-calendar copy.html">Календарь
+                              мастера</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/login.html">Авторизация</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/filials.html">Филиалы</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/business.html">Бизнес</a></li>
@@ -246,14 +303,16 @@
                           <li><a href="https://alex-khrust.github.io/salons/article.html">Стаитья</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/article-video.html">Стаитья с видео</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/article-add.html">Добавление статьи</a></li>
-                          <li><a href="https://alex-khrust.github.io/salons/admin.html">Кабинет администрирования</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/admin.html">Кабинет администрирования</a>
+                          </li>
                           <!-- <li><a href="https://alex-khrust.github.io/salons/add-worker.html">Добавить сотрудника</a></li> -->
-                          <li><a href="https://alex-khrust.github.io/salons/add-worker copy.html">Добавить сотрудника</a></li>
+                          <li><a href="https://alex-khrust.github.io/salons/add-worker copy.html">Добавить
+                              сотрудника</a></li>
                           <li><a href="https://alex-khrust.github.io/salons/404.html">404.html</a></li>
                         </ol>
                       </div>
                     </div>
-                    
+
                     <div class="production">
                       <a href="https://beautyclick.sk/" target="_blank">beautyclick.sk</a>
                     </div>
@@ -264,11 +323,12 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item administration">
+          <li class="portfolio-list__item show administration">
             <img class="img" src="img/dest/projects/crop/zno-courses-student-main.jpg" alt="zno-courses">
             <div class="description">
               <h3>jurnal.znocourses</h3>
-              <p>Многостраничный сайт. Журнал занятий и успеваемости учебного ресурса <a href="https://znocourses.com/">znocourses.com</a> </p>
+              <p>Многостраничный сайт. Журнал занятий и успеваемости учебного ресурса <a
+                  href="https://znocourses.com/">znocourses.com</a> </p>
               <a href="https://alex-khrust.github.io/zno-courses/student-main.html" class="btn">Подробнее</a>
             </div>
             <div class="popup-overlay">
@@ -288,14 +348,43 @@
                       </div>
                       <div class="timing">
                         <h4>Сроки выполнения:</h4>
+                        <span>14 дней</span>
                       </div>
                       <div class="write-up">
-                        Многостраничный сайт. Журнал занятий и успеваемости учебного ресурса <a href="https://znocourses.com/">znocourses.com</a> 
+                        Многостраничный сайт. Журнал занятий и успеваемости учебного ресурса <a
+                          href="https://znocourses.com/">znocourses.com</a>
                       </div>
                       <div class="pages">
                         <h4>Страницы:</h4>
                         <ol>
-                          <li><a href="https://alex-khrust.github.io/avoid-bounces/">Главная</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/index.html">Авторизация</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/admin-big.html">admin-big.html</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/admin.html">Панель
+                              администрирования</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/group.html">Группа</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/groups-add.html">Добавление группы</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/groups-list.html">Списаок групп</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/groups.html">Группы</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/newsletters-list.html">Рассылка</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/newsletters.html">Начать рассылку</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/parents.html">Родители</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/profile.html">Профайл ученика</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/student-add.html">Добавить ученика</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/student-main.html">Личная страница
+                              ученика</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/students-list.html">Список учеников</a>
+                          </li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/teacher.html">Добавить
+                              преподавателя</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/teachers-list.html">Список
+                              преподователей</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/test-list.html">Список тестов</a></li>
+                          <li><a href="https://alex-khrust.github.io/zno-courses/tests.html">Добавить тест</a></li>
                         </ol>
                       </div>
                     </div>
@@ -310,7 +399,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item">
+          <li class="portfolio-list__item show presentation">
             <img class="img" src="img/dest/projects/crop/SaveItForMe-black.jpg" alt="SaveItForMe">
             <div class="description">
               <h3>SaveItForMe</h3>
@@ -343,9 +432,14 @@
                         <h4>Страницы:</h4>
                         <ol>
                           <li><a href="https://alex-khrust.github.io/SaveItForMe/index.html">Главная</a></li>
-                          <li><a href="https://alex-khrust.github.io/SaveItForMe/cabinet.html">Личный кабинет пользователя</a></li>
+                          <li><a href="https://alex-khrust.github.io/SaveItForMe/cabinet.html">Личный кабинет
+                              пользователя</a></li>
                         </ol>
                       </div>
+                    </div>
+
+                    <div class="production">
+                      <a href="https://zapomni.com.ua/" target="_blank">zapomni.com.ua</a>
                     </div>
 
                     <iframe id="iframe" src="" frameborder="0"></iframe>
@@ -354,7 +448,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item catalog">
+          <li class="portfolio-list__item show catalog">
             <img class="img" src="img/dest/projects/crop/vitoslavica.ru.jpg" alt="vitoslavica.ru">
             <div class="description">
               <h3>Сайт католог производителя деревянных домов "Витославица"</h3>
@@ -386,7 +480,32 @@
                       <div class="pages">
                         <h4>Страницы:</h4>
                         <ol>
-                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/">Главная</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/index.html">Главная</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/projects.html">Проекты</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/otzyvy.html">Отзывы</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/stati.html">Стаитьи</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/o-kompanii.html">О компании</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/contacts.html">Контакты</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/calculator.html">Калькулятор
+                              строительства дома</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/czena-na-material.html">Цена на
+                              материал</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/galereya.html">Галереи компании
+                              Витославица</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/kaliningrad.html">Проект каркасного
+                              дома</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/tver.html">Прект дома из бруса</a>
+                          </li>
+                          <li><a
+                              href="https://alex-khrust.github.io/vitoslavica.ru/istoriya-odnogo-brusovika.html">История
+                              одного брусовика</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/kak-ne-oshibitsya.html">Как не
+                              ошибиться при выборе строительной компании?</a></li>
+                          <li><a
+                              href="https://alex-khrust.github.io/vitoslavica.ru/domokomplekty-iz-ocilindrovannogo-brevna.html">Домокомплекты
+                              из оцилиндрованного бревна</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/search.html">Поиск</a></li>
+                          <li><a href="https://alex-khrust.github.io/vitoslavica.ru/404.html">404</a></li>
                         </ol>
                       </div>
                     </div>
@@ -401,7 +520,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item shop">
+          <li class="portfolio-list__item show shop">
             <img class="img" src="img/dest/projects/crop/AutoRepair.jpg" alt="AutoRepair">
             <div class="description">
               <h3>Сайт каталог - Автосервиса</h3>
@@ -410,7 +529,7 @@
             </div>
             <div class="popup-overlay">
               <div class="popup">
-        <button class="close-btn" aria-label="Закрыть" title="Закрыть">
+                <button class="close-btn" aria-label="Закрыть" title="Закрыть">
                   <span class="line"></span>
                 </button><!-- close popup -->
                 <div class="popup__content">
@@ -425,6 +544,7 @@
                       </div>
                       <div class="timing">
                         <h4>Сроки выполнения:</h4>
+                        <span>10 дней</span>
                       </div>
                       <div class="write-up">
                         <h4>Что было сделано:</h4>
@@ -434,8 +554,22 @@
                       </div>
                       <div class="pages">
                         <h4>Страницы:</h4>
+
                         <ol>
-                          <li><a href="https://alex-khrust.github.io/avoid-bounces/">Главная</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/index.html">Главная</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/blog-1.html">Стаитья</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/blog.html">Стаитьи</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/cart.html">Корзина</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/checkout.html">Оплата</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/contacts.html">Контакты</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/gallery.html">Галерея</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/news-1.html">Новость</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/news.html">Новости</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/products-1.html">Товар</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/products.html">Продукция</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/search.html">Поиск</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/services.html">Услуги</a></li>
+                          <li><a href="https://alex-khrust.github.io/AutoRepair/thanks.html">Благодарность</a></li>
                         </ol>
                       </div>
                     </div>
@@ -446,7 +580,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item administration">
+          <li class="portfolio-list__item show administration">
             <img class="img" src="img/dest/projects/crop/white-log.jpg" alt="white-log">
             <div class="description">
               <h3>white-log</h3>
@@ -488,7 +622,7 @@
                         </ol>
                       </div>
                     </div>
-                    
+
                     <div class="production">
                       <a href="https://alex-khrust.github.io/white-log/index.html" target="_blank">white-log</a>
                     </div>
@@ -499,7 +633,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item presentation">
+          <li class="portfolio-list__item show presentation">
             <img class="img" src="img/dest/projects/crop/avoid-bounces.png" alt="avoidbounce.com">
             <div class="description">
               <h3>Сайт валидации Email адресов avoidbounce.com</h3>
@@ -545,7 +679,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item presentation">
+          <li class="portfolio-list__item show presentation">
             <img class="img" src="img/dest/projects/crop/praces.com.ua.jpg" alt="praces.com.ua">
             <div class="description">
               <h3>PRaces - брендиноговое агенство</h3>
@@ -592,7 +726,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item landing">
+          <li class="portfolio-list__item show landing">
             <img class="img" src="img/dest/projects/crop/devorno.ru.jpg" alt="devorno.ru">
             <div class="description">
               <h3>Devorno - Веб-студия</h3>
@@ -601,7 +735,7 @@
             </div>
             <div class="popup-overlay">
               <div class="popup">
-        <button class="close-btn" aria-label="Закрыть" title="Закрыть">
+                <button class="close-btn" aria-label="Закрыть" title="Закрыть">
                   <span class="line"></span>
                 </button><!-- close popup -->
                 <div class="popup__content">
@@ -637,7 +771,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item portal">
+          <li class="portfolio-list__item show portal">
             <img class="img" src="img/dest/projects/crop/kubena35.ru_.jpg" alt="kubena35.ru">
             <div class="description">
               <h3>Администрация Усть-Кубинского района</h3>
@@ -666,8 +800,11 @@
                       <div class="write-up">
                         <h4>Что было сделано:</h4>
                         <ol>
-                          <li>Были написаны стили которые меняют внешний вид контента: изменют размер шрифта, скрывают изображения, чёрно-белый и контрастные режимы.
-                          И скрипт запоминающий выбор пользователя в локальной памяти браузера (LocalStorage), с помощью которого пользователю не нужно будет настраивать версию для слабовидящих каждый новый вход на сайт, даже после перезагрузки.</li>
+                          <li>Были написаны стили которые меняют внешний вид контента: изменют размер шрифта, скрывают
+                            изображения, чёрно-белый и контрастные режимы.
+                            И скрипт запоминающий выбор пользователя в локальной памяти браузера (LocalStorage), с
+                            помощью которого пользователю не нужно будет настраивать версию для слабовидящих каждый
+                            новый вход на сайт, даже после перезагрузки.</li>
                         </ol>
                       </div>
                       <div class="pages">
@@ -689,7 +826,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item presentation">
+          <li class="portfolio-list__item show presentation">
             <img class="img" src="img/dest/projects/crop/american_business.jpg" alt="american_business">
             <div class="description">
               <h3>Название сайта</h3>
@@ -734,7 +871,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item presentation">
+          <li class="portfolio-list__item show presentation">
             <img class="img" src="img/dest/projects/crop/Peugeot_Trnava.jpg" alt="Peugeot_Trnava">
             <div class="description">
               <h3>Лендинг по трудоустройству на завод Peugeot Slovakia</h3>
@@ -779,7 +916,7 @@
               </div><!-- popup -->
             </div><!-- popup-overlay -->
           </li>
-          <li class="portfolio-list__item corporation">
+          <li class="portfolio-list__item show corporation">
             <img class="img" src="img/dest/projects/crop/iskrennost..jpg" alt="mariupolauto.com">
             <div class="description">
               <h3>ОО "Искренность"</h3>
@@ -817,7 +954,8 @@
                           <li>В HTML добавлена семантика.</li>
                           <li>Сайт адаптирован под мобильные устройства.</li>
                           <li>Посадка вёрстки на CMS WordPress.</li>
-                          <li>Добавлены новые страницы с таблицами расписаний рейсов, устаревший контент обновлён либо удалён.</li>
+                          <li>Добавлены новые страницы с таблицами расписаний рейсов, устаревший контент обновлён либо
+                            удалён.</li>
                           <li>Добавлена портнёрская форма заказов билетов онлайн Frame InBus.</li>
                           <li>Добавлен плагин WordPress для вывода постов со стены страницы предприятия в Facebook.</li>
                           <li>Добавлен плагин комментариев Facebook на стринцы с расписанием рейсов.</li>
@@ -982,50 +1120,6 @@
 
   <script src="js/libs.min.js"></script>
   <script src="js/app.js"></script>
-  <script>
-    filterSelection("all")
-    function filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("portfolio-list__item");
-      if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-      }
-    }
-
-    function w3AddClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-      }
-    }
-
-    function w3RemoveClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);
-        }
-      }
-      element.className = arr1.join(" ");
-    }
-
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("filter-btns");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
-  </script>
 </body>
 
 </html>
