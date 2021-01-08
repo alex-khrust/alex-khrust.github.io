@@ -736,18 +736,26 @@ header .top-nav ul li a:hover span:nth-child(1), header .top-nav ul li a:active 
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(auto, 405px))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(auto, 405px));
+  -ms-grid-columns: (minmax(auto, 380px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(auto, 380px));
   -ms-grid-rows: (minmax(220px, 30vh))[auto-fill];
       grid-template-rows: repeat(auto-fill, minmax(220px, 30vh));
   grid-auto-flow: row;
-  grid-gap: 30px;
+  grid-gap: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (min-width: 825px) {
+  .portfolio-list {
+    -ms-grid-columns: (minmax(auto, 405px))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(auto, 405px));
+    grid-gap: 30px;
+  }
 }
 
 .portfolio-list__item {
