@@ -27,12 +27,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // $('section').addClass('wow fadeInUp');
   // $('.topic').addClass('wow flipInY');
   // $('.portfolio-list__item').addClass('wow bounceIn');
+  var plus = 0;
+  $('.filter-btns button').addClass('wow animate__zoomInDown').each(function(i) {
+    plus += 0.3;
+    $(this).attr('data-wow-delay', plus + 's');
+    // $(this).css('animation-delay', plus + 's');
+  });
+  var plus = 0;
+  $('.contacts__list li').addClass('wow animate__zoomInDown').each(function(i) {
+    plus += 0.3;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'1s'});
+  });
+  var plus = 3;
+  $('.tec img').addClass('wow animate__bounceInRight').each(function(i) {
+    plus += 0.15;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+  });
 
   wow = new WOW(
     {
       boxClass: 'wow',      // default
-      animateClass: 'animated', // default
-      offset: 150,          // default
+      animateClass: 'animate__animated', // default
+      offset: 0,          // default
       mobile: false,       // default
       live: true,        // default
       callback: function (box) {
@@ -181,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).addClass('active');
 
     var this_parent = $(this).closest('.portfolio-list__item');
-    $('.project').animate({
+    this_parent.find('.project').animate({
       scrollTop: this_parent.find('iframe').offset().top
     }, 1000);
   })

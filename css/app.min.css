@@ -1,4 +1,4 @@
-@import url(c:\Users\stale\Desktop\alex-khrust.github.io\node_modules\wow.js\css\libs\animate.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 html {
   height: 100%;
 }
@@ -49,6 +49,10 @@ a {
 
 a, button, .btn, .navBurger {
   -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
