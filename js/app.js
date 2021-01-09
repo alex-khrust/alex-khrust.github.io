@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       boxClass: 'wow',      // default
       animateClass: 'animate__animated', // default
       offset: 0,          // default
-      mobile: false,       // default
+      mobile: true,       // default
       live: true,        // default
       callback: function (box) {
         // the callback is fired every time an animation is started
