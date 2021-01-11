@@ -29,16 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // $('.portfolio-list__item').addClass('wow bounceIn');
   var plus = 0;
   $('.filter-btns button').addClass('wow animate__zoomInDown').each(function(i) {
-    plus += 0.3;
+    plus += 0.2;
     $(this).attr('data-wow-delay', plus + 's');
     // $(this).css('animation-delay', plus + 's');
   });
   var plus = 0;
   $('.contacts__list li').addClass('wow animate__zoomInDown').each(function(i) {
-    plus += 0.3;
+    plus += 0.22;
     $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'1s'});
   });
-  var plus = 3;
+  var plus = 2.5;
   $('.tec img').addClass('wow animate__bounceInRight').each(function(i) {
     plus += 0.15;
     $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
