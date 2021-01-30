@@ -209,7 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var this_parent = $(this).closest('.portfolio-list__item');
 
     e.preventDefault();
-    $('body').addClass('locked');
     this_parent.find('.popup-overlay , .popup').addClass('active');
     this_parent.find('iframe').attr('src', this.href);
   })

@@ -63,6 +63,8 @@
   overflow: hidden
   padding: 0
   transform: scale(0)
+  $aspect: 56.25%
+  // padding-top: $aspect
   &.show
     transform: unset
   & img
@@ -117,7 +119,7 @@
     .description h3
       transform: translateY(0)
     .description p, .btn
-      transform: translateY(0px)
+      transform: translateY(0)
     .description p
       transition: all 0.5s ease-in-out
     .description .btn
