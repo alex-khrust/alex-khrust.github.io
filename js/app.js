@@ -211,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     this_parent.find('.popup-overlay , .popup').addClass('active');
     this_parent.find('iframe').attr('src', this.href);
+    $('body').addClass('locked');
   })
 
   close_popup_btn.on('click', function () {
@@ -220,15 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300)
     $('.pages a').removeClass('active');
   })
-
-  // $(window).on('click', function(event) {
-  //   if (event.$target == '.popup') {
-  //     $('.popup-overlay , .popup').removeClass('active');
-  //     setTimeout(function() {
-  //       $('body').removeClass('locked');
-  //     }, 300)
-  //   }
-  // })
 
   //--------------------------------------------------------------------------
   // Фильтр проектов ---------------------------------------------------------
