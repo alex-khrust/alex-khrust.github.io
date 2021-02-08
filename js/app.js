@@ -25,23 +25,26 @@ document.addEventListener("DOMContentLoaded", function () {
   //------------ wow.js ---------------------------------------------
   // Для упрощения добавления одинаковым элементам классов анимации - добавляю их с помощью jQuery.
   // $('section').addClass('wow fadeInUp');
-  // $('.topic').addClass('wow flipInY');
+  $('.topic').addClass('wow animate__zoomInUp');
   // $('.portfolio-list__item').addClass('wow bounceIn');
   var plus = 0;
   $('.filter-btns button').addClass('wow animate__zoomInDown').each(function(i) {
     plus += 0.2;
     $(this).attr('data-wow-delay', plus + 's');
-    // $(this).css('animation-delay', plus + 's');
   });
   var plus = 0;
-  $('.contacts__list li').addClass('wow animate__zoomInDown').each(function(i) {
-    plus += 0.22;
-    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'1s'});
+  $('.contacts__list li').addClass('wow animate__fadeInUp').each(function(i) {
+    plus += .5;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
   });
-  var plus = 2.5;
-  $('.tec img').addClass('wow animate__bounceInRight').each(function(i) {
-    plus += 0.15;
-    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+  var plus = 0;
+  $('.tec img:nth-child(even)').addClass('wow animate__bounceIn').each(function(i) {
+    plus += 0.25;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
+  });
+  $('.tec img:nth-child(odd)').addClass('wow animate__bounceIn').each(function(i) {
+    plus += 0.25;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
   });
 
   wow = new WOW(
