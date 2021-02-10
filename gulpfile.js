@@ -71,8 +71,11 @@ function images() {
 	return src([baseDir + '/img/src/**/*'])
 	.pipe(newer(baseDir + '/img/dest'))
 	.pipe(imagemin([
-		
-	]))
+		imagemin.svgo({plugins: [{removeViewBox: true}]}),
+		imagemin.mozjpeg({quality: 75, progressive: true})
+	], {
+		verbose: true
+	}))
 	.pipe(dest(baseDir + '/img/dest'))
 	.pipe(browserSync.stream())
 }
