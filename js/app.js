@@ -190,34 +190,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // })('https://widget.replain.cc/dist/client.js');
   //--------------------------------------------------------------------------
   //Замена src у iframe на href ссылки по клику -----------------------------
-  $('.pages a , .url').on('click', function (e) {
+  $('.portfolio-list__item').on('click', '.pages a , .url', function (e) {
     e.preventDefault();
-    $('.popup.active iframe').attr('src', this.href);
+    $('.popup-overlay.active iframe').attr('src', this.href);
 
     $('.pages a').each(function () {
       $(this).removeClass('active');
     });
     $(this).addClass('active');
 
-    var this_parent = $(this).closest('.portfolio-list__item');
-    this_parent.find('.project').animate({
-      scrollTop: this_parent.find('iframe').offset().top
+    var thisParent = $(this).closest('.portfolio-list__item');
+    thisParent.find('.project').animate({
+      scrollTop: thisParent.find('iframe').offset().top
     }, 1000);
   })
   //------------------------------------------------------------------------
-  var open_popup_btn = $('.portfolio-list__item .description > .btn');
-  var close_popup_btn = $('.close-btn');
+  // var popupOpen = $('.portfolio-list__item .description > .btn');
+  // var popupClose = $('.close-popup');
 
-  open_popup_btn.on('click', function (e) {
-    var this_parent = $(this).closest('.portfolio-list__item');
-
+  $('body').on('click', '.open-popup', function (e) {
     e.preventDefault();
-    this_parent.find('.popup-overlay , .popup').addClass('active');
-    this_parent.find('iframe').attr('src', this.href);
+
+    var thisParent = $(this).closest('.portfolio-list__item');
+    var dataPopupSrc = $(this).attr('data-popup-src')
+
+    thisParent.find('.popup-overlay').addClass('active').load(dataPopupSrc);
+    // thisParent.find('.popup').addClass('active');
+    // thisParent.find('iframe').attr('src', this.href);
     $('body').addClass('locked');
   })
 
-  close_popup_btn.on('click', function () {
+  $('.popup-overlay').on('click', '.close-popup', function () {
     $('.popup-overlay , .popup').removeClass('active');
     setTimeout(function () {
       $('body').removeClass('locked');
@@ -227,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //--------------------------------------------------------------------------
   // Фильтр проектов ---------------------------------------------------------
-  $(".filter-btns button").click(function () {
+  $(".filter-btns button").on('click', function () {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
     var selectedClass = $(this).attr("data-rel");

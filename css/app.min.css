@@ -1241,7 +1241,7 @@ footer {
   font-size: 14px;
 }
 
-.close-btn {
+.close-popup {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -1272,19 +1272,19 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .close-btn {
+  .close-popup {
     top: -55px;
     right: -15px;
   }
 }
 
-.close-btn span {
+.close-popup span {
   width: 24px;
   height: 2px;
   position: relative;
 }
 
-.close-btn span:before, .close-btn span:after {
+.close-popup span:before, .close-popup span:after {
   content: "";
   position: absolute;
   left: 0;
@@ -1294,13 +1294,13 @@ footer {
   border-radius: 2px;
 }
 
-.close-btn span:before {
+.close-popup span:before {
   top: 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.close-btn span:after {
+.close-popup span:after {
   bottom: 0;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -1393,7 +1393,7 @@ footer {
   opacity: 1;
 }
 
-.popup.active .close-btn {
+.popup.active .close-popup {
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
   opacity: 1;
