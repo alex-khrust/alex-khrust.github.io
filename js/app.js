@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   var plus = 0;
   $('.contacts__list li').addClass('wow animate__fadeInUp').each(function(i) {
-    plus += .5;
+    plus += .3;
     $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
   });
   var plus = 0;
