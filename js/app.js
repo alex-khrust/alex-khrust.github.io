@@ -205,14 +205,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   })
   //------------------------------------------------------------------------
-  // var popupOpen = $('.portfolio-list__item .description > .btn');
-  // var popupClose = $('.close-popup');
+  // Вызов попапа проекта --------------------------------------------------
+  $('.production a').attr('title','Посмотртеть продакшн');
 
   $('body').on('click', '.open-popup', function (e) {
     e.preventDefault();
 
     var thisParent = $(this).closest('.portfolio-list__item');
-    var dataPopupSrc = $(this).attr('data-popup-src')
+    var dataPopupSrc = 'projects/' + $(this).attr('data-popup-src')
 
     thisParent.find('.popup-overlay').addClass('active').load(dataPopupSrc);
     // thisParent.find('.popup').addClass('active');
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".filter-btns button").on('click', function () {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
-    var selectedClass = $(this).attr("data-rel");
+    var selectedClass = $(this).attr("data-filter");
     $(".portfolio-list").fadeTo(100, 0.1);
     $(".portfolio-list__item").not("." + selectedClass).fadeOut().removeClass('show');
     setTimeout(function () {

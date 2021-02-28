@@ -136,11 +136,53 @@ $easing: cubic-bezier(.55,0,.1,1)
   height: 100%
   padding-right: 10px
   overflow: auto
+
+  &__header
+    width: 100%
+    height: auto
+    padding: 15px 15px 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-flow: wrap
+
   h3
     font-size: 24px
     font-weight: 900
     text-align: center
-    margin: 20px 0 30px
+    margin: 0 auto
+
+  .production
+    width: auto
+    height: auto
+    display: flex
+    align-items: center
+    a
+      margin-left: auto
+      font-size: 22px
+      font-weight: bold
+      color: $txt
+      display: flex
+      text-decoration: none
+      position: relative
+      @media ( max-width: 768px )
+        font-size: 18px
+      &:after
+        content: ""
+        position: absolute
+        width: 0
+        height: 2px
+        right: 0
+        bottom: 0
+        background: $txt
+        transition: all 0.5s
+      &:hover,
+      &:active,
+      &.active
+        &:after
+          width: 100%
+          left: 0
+
   &__desc
     width: 100%
     height: auto
@@ -211,40 +253,22 @@ $easing: cubic-bezier(.55,0,.1,1)
         list-style-position: inside
         li
           height: auto
-          // min-height: 22px
-          // margin-bottom: 3px
           display: flex
           align-items: center
           counter-increment: counter
           position: relative
-          padding-left: 20px
-          margin-left: 10px
+          padding-left: 30px
           // background: $bg
           // border-radius: 5px
           // transition: .3s
           &:before
-            contain: ''
-            width: 20px
-            height: 20px
+            content: counter(counter)
+            width: auto
+            height: auto
             position: absolute
             top: 50%
-            left: -10px
+            left: 0
             transform: translateY(-50%)
-            content: counter(counter)
-          //   margin-right: 10px
-          //   display: inline-flex
-          //   align-items: center
-          //   font-weight: bold
-          //   justify-content: center
-          //   font-size: 12px
-          //   line-height: 1
-          //   background: #00ccff
-          //   color: #ffffff
-          //   border-radius: 50%
-          //   border: 2px solid #fff
-          //   overflow: hidden
-          // &:hover
-          //   background: lighten($bg, 15%)
     a
       // width: 100%
       // height: 100%
@@ -252,7 +276,7 @@ $easing: cubic-bezier(.55,0,.1,1)
       color: $txt
       transition: .3s
       position: relative
-      &:before
+      &:after
         content: ""
         position: absolute
         width: 0
@@ -266,38 +290,7 @@ $easing: cubic-bezier(.55,0,.1,1)
       &.active
         // font-weight: 900
         text-shadow: 0 0 2px $txt
-        &:before
-          width: 100%
-          left: 0
-
-  .production
-    width: 100%
-    height: auto
-    display: flex
-    align-items: center
-    a
-      margin-left: auto
-      font-size: 22px
-      font-weight: bold
-      color: $txt
-      display: flex
-      text-decoration: none
-      position: relative
-      @media ( max-width: 768px )
-        font-size: 18px
-      &:before
-        content: ""
-        position: absolute
-        width: 0
-        height: 2px
-        right: 0
-        bottom: 0
-        background: $txt
-        transition: all 0.5s
-      &:hover,
-      &:active,
-      &.active
-        &:before
+        &:after
           width: 100%
           left: 0
 
@@ -310,9 +303,17 @@ $easing: cubic-bezier(.55,0,.1,1)
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset
   
   
-  
-  
-  
+a[target="_blank"]
+  display: flex
+  align-items: center
+  &::before
+    content: ''
+    width: 20px
+    height: 20px
+    position:  relative
+    margin-right: 10px
+    margin-bottom: 3px
+    background: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='external-link-alt' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-external-link-alt fa-w-16'%3E%3Cpath fill='444444' d='M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z' class=''%3E%3C/path%3E%3C/svg%3E") no-repeat !important
   
   
   
