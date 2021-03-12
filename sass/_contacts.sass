@@ -17,8 +17,8 @@
 .contacts__list
   width: auto
   height: 100%
-  display: flex
-  flex-flow: column
+  gap: clamp(5px, 1vw, 14px) 
+  display: grid
   justify-content: center
   align-items: baseline
   li
@@ -29,18 +29,19 @@
     position: relative
     font-size: 25px
     font-weight: 900
-    margin: 7px 0
     padding-left: 50px
     &:before
       content: ""
       position: absolute
       width: 35px
+      width: clamp(25px, 4vw, 35px)
+      max-width: 35px
       height: 35px
-      top: -3px
+      top: 0
       left: 0
       display: inline-block
-      @media ( max-width: 768px )
-        top: 0
+      @media ( min-width: 768px )
+        top: -3px
     a
       margin-left: 30px
       color: $txt

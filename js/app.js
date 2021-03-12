@@ -25,27 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
   //------------ wow.js ---------------------------------------------
   // Для упрощения добавления одинаковым элементам классов анимации - добавляю их с помощью jQuery.
   // $('section').addClass('wow fadeInUp');
-  $('.topic').addClass('wow animate__zoomInUp');
+  $('.topic').first().addClass('wow animate__zoomInUp');
   // $('.portfolio-list__item').addClass('wow bounceIn');
   var plus = 0;
   $('.filter-btns button').addClass('wow animate__zoomInDown').each(function(i) {
     plus += 0.2;
     $(this).attr('data-wow-delay', plus + 's');
   });
-  var plus = 0;
-  $('.contacts__list li').addClass('wow animate__fadeInUp').each(function(i) {
-    plus += .3;
-    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
-  });
-  var plus = 0;
-  $('.tec img:nth-child(even)').addClass('wow animate__bounceIn').each(function(i) {
-    plus += 0.25;
-    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
-  });
-  $('.tec img:nth-child(odd)').addClass('wow animate__bounceIn').each(function(i) {
-    plus += 0.25;
-    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
-  });
+  // var plus = 0;
+  // $('.contacts__list li').addClass('wow animate__fadeInUp').each(function(i) {
+  //   plus += .3;
+  //   $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
+  // });
+  // var plus = 0;
+  // $('.tec img:nth-child(even)').addClass('wow animate__bounceIn').each(function(i) {
+  //   plus += 0.25;
+  //   $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
+  // });
+  // $('.tec img:nth-child(odd)').addClass('wow animate__bounceIn').each(function(i) {
+  //   plus += 0.25;
+  //   $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'.8s'});
+  // });
 
   wow = new WOW(
     {
@@ -71,10 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     $(document).off("scroll");
 
-    $(this).each(function () {
-      $(this).removeClass('active');
-    });
-    $(this).addClass('active');
+    // $(this).each(function () {
+    //   $(this).removeClass('active');
+    // });
+    // $(this).addClass('active');
 
     var target = this.hash;
     $target = $(target);
@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var scrollDistance = $(window).scrollTop();
     $('section').each(function (i) {
       if ($(this).position().top - 120 <= scrollDistance) {
-        $('#menu a.active').removeClass('active');
-        $('#menu a').eq(i).addClass('active');
+        // $('#menu a.active').removeClass('active');
+        // $('#menu a').eq(i).addClass('active');
       }
     });
   }).scroll();
@@ -190,9 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // })('https://widget.replain.cc/dist/client.js');
   //--------------------------------------------------------------------------
   //Замена src у iframe на href ссылки по клику -----------------------------
-  $('.portfolio-list__item').on('click', '.pages a , .url', function (e) {
+  $('.portfolio-list__item').on('click', '.pages a, .url', function (e) {
     e.preventDefault();
-    $('.popup-overlay.active iframe').attr('src', this.href);
+    $('.popup.active iframe').attr('src', this.href);
 
     $('.pages a').each(function () {
       $(this).removeClass('active');
@@ -214,14 +214,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var thisParent = $(this).closest('.portfolio-list__item');
     var dataPopupSrc = 'projects/' + $(this).attr('data-popup-src')
 
-    thisParent.find('.popup-overlay').addClass('active').load(dataPopupSrc);
+    thisParent.find('.popup').addClass('active').load(dataPopupSrc);
     // thisParent.find('.popup').addClass('active');
     // thisParent.find('iframe').attr('src', this.href);
     $('body').addClass('locked');
   })
 
-  $('.popup-overlay').on('click', '.close-popup', function () {
-    $('.popup-overlay , .popup').removeClass('active');
+  $('.popup').on('click', '.close-btn, .overlay', function () {
+    $('.popup, .popup__box').removeClass('active');
     setTimeout(function () {
       $('body').removeClass('locked');
     }, 300)

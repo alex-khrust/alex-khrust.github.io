@@ -2,7 +2,7 @@ $speed: 0.6s
 $delay: .3s
 $easing: cubic-bezier(.55,0,.1,1)
 
-.close-popup
+.close-btn
   width: 40px
   height: 40px
   position: absolute
@@ -49,13 +49,14 @@ $easing: cubic-bezier(.55,0,.1,1)
   overflow: hidden
 
 
-.popup-overlay
+
+.popup
   position: fixed
   top: 0
   left: 0
   width: 100%
   height: 100%
-  z-index: -100
+  z-index: 111
   display: flex
   align-items: center
   justify-content: center
@@ -71,37 +72,56 @@ $easing: cubic-bezier(.55,0,.1,1)
     visibility: visible
     overflow: auto
     z-index: 100
+    .overlay
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      display: block
+  .overlay
+    display: none
 
-.popup
-  width: 100%
-  height: 100%
-  padding: 10px 0 10px 10px
-  background-color: #ffffff
-  box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
-  display: flex
-  align-items: center
-  justify-content: center
-  opacity: 0
-  // overflow-y: auto
-  overflow: visible
-  z-index: 999
-  visibility: hidden
-  backface-visibility: hidden
-  transform: scale(1.2)
-  transition: all $speed $easing
-  @media ( min-width: 768px )
-    border-radius: 20px
-  &.active
-    visibility: visible
-    opacity: 1
-    transform: scale(1)
-
-    .popup__content
+  &__box
+    width: 100%
+    height: 100%
+    padding: 10px 0 10px 10px
+    background-color: #ffffff
+    box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+    // overflow-y: auto
+    overflow: visible
+    z-index: 222
+    visibility: hidden
+    backface-visibility: hidden
+    transform: scale(1.2)
+    transition: all $speed $easing
+    ::-webkit-scrollbar
+      width: 12px
+    ::-webkit-scrollbar-track
+      border-radius: 10px
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+      background: $txt
+    ::-webkit-scrollbar-thumb
+      border-radius: 10px
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
+      background: #00ccff
+    @media ( min-width: 768px )
+      border-radius: 20px
+    &.active
+      visibility: visible
       opacity: 1
+      transform: scale(1)
 
-    .close-popup
-      transform: translateY(40px)
-      opacity: 1
+      .popup__content
+        opacity: 1
+
+      .close-btn
+        transform: translateY(40px)
+        opacity: 1
 
   &__content
     width: 100%
@@ -117,19 +137,7 @@ $easing: cubic-bezier(.55,0,.1,1)
     overflow: hidden
     @media ( min-width: 768px )
       border-radius: 15px 0 0 15px
-
-
-.popup
-  ::-webkit-scrollbar
-      width: 12px
-  ::-webkit-scrollbar-track
-      border-radius: 10px
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
-      background: $txt
-  ::-webkit-scrollbar-thumb
-      border-radius: 10px
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)
-      background: #00ccff
+  
   
 .project
   width: 100%
@@ -140,7 +148,8 @@ $easing: cubic-bezier(.55,0,.1,1)
   &__header
     width: 100%
     height: auto
-    padding: 15px 15px 20px
+    padding: 25px 0 25px
+    gap: 15px 
     display: flex
     align-items: center
     justify-content: center
@@ -304,161 +313,36 @@ $easing: cubic-bezier(.55,0,.1,1)
   
   
 a[target="_blank"]
+  height: 30px
+  padding: 0 14px 0 95px
+  justify-self: end
   display: flex
   align-items: center
-  &::before
-    content: ''
-    width: 20px
-    height: 20px
-    position:  relative
-    margin-right: 10px
-    margin-bottom: 3px
-    background: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='external-link-alt' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-external-link-alt fa-w-16'%3E%3Cpath fill='444444' d='M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z' class=''%3E%3C/path%3E%3C/svg%3E") no-repeat !important
-  
-  
-  
-  
-  
-  
-  
-  
-// .popup-overlay
-//   z-index: 200
-//   &.active
-//     opacity: 1
-//     visibility: visible
-//     overflow: hidden
-
-// .popup-content
-//   justify-content: flex-start
+  font-size: 16px !important
+  border-radius: 30px
+  border: 2px solid #444
+  overflow: hidden
+  transition: background, color .3s
+  &:before
+    content: 'https://'
+    position: absolute
+    left: 0
+    width: 73px
+    height: 100%
+    padding-left: 14px
+    display: flex
+    align-items: center
+    background: $txt
+    color: #fff
+  &:after
+    display: none
+  &:hover
+    background: $txt
+    color: #fff
 
 
 
 
 
-// /**
-//  * Variables
-//  */
-// $speed: 0.6s
-// $delay: $speed*.3s
-// $easing: cubic-bezier(.55,0,.1,1)
 
 
-// /**
-//  * Base styles
-//  */
-
-// /**
-//  * Overlay
-//  * -- only show for tablet and up
-//  */
-// @media only screen and (min-width: 40em)
-//   .popup-overlay
-//     display: flex
-//     align-items: center
-//     justify-content: center
-//     position: fixed
-//     top: 0
-//     left: 0
-//     width: 100%
-//     height: 100%
-//     z-index: 5
-//     background: linear-gradient( 38deg, rgba(82, 64, 172, 0.8) 0%, rgba(148, 103, 210, 0.81) 99%)
-//     opacity: 0
-//     visibility: hidden
-//     backface-visibility: hidden
-//     transition: opacity $speed $easing, visibility $speed $easing
-//     &.active
-//       opacity: 1
-//       visibility: visible
-//       overflow: hidden
-      
-// // media query
-// /**
-//  * popup
-//  */
-// .popup
-//   width: 1030px
-//   height: 596px
-//   background-color: #fff
-//   border-radius: 20px
-//   box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
-//   display: flex
-//   align-items: center
-//   justify-content: center
-//   position: relative
-//   margin: 0 auto
-//   max-width: 75rem
-//   min-height: 20rem
-//   padding: 1rem
-//   opacity: 0
-//   overflow-y: auto
-//   z-index: 7
-//   visibility: hidden
-//   backface-visibility: hidden
-//   transform: scale(1.2)
-//   transition: all $speed $easing
-
-//   .close-popup
-//     width: 1.75em
-//     height: 1.75em
-//     position: absolute
-//     cursor: pointer
-//     top: 5px
-//     right: 15px
-//     opacity: 0
-//     backface-visibility: hidden
-//     transition: opacity $speed $easing, transform $speed $easing
-//     transition-delay: $delay
-  
-//  // close popup
-
-//   .popup-content
-//     width: 100%
-//     height: 100%
-//     opacity: 0
-//     backface-visibility: hidden
-//     transition: opacity $speed $easing
-//     transition-delay: $delay
-//     display: flex
-//     flex-flow: column
-//     justify-content: center
-//     align-items: center
-//  // content
-
-//   &.active
-//     visibility: visible
-//     opacity: 1
-//     transform: scale(1)
-
-//     .popup-content
-//       opacity: 1
-  
-
-//     .close-popup
-//       transform: translateY(10px)
-//       opacity: 1
-  
-
-
-
-
-
-// /**
-//  * Mobile styling
-//  */
-// @media only screen and (max-width: 39.9375em)
-//   .popup
-//     position: fixed
-//     top: 0
-//     left: 0
-//     width: 100%
-//     height: 100%
-//     -webkit-overflow-scrolling: touch
-//     border-radius: 0
-//     transform: scale(1.1)
-//     padding: 0 !important
-
-
-//   .close-popup
-//     right: 20px !important
