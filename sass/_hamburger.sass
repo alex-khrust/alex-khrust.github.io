@@ -1,55 +1,57 @@
-.navBurger
-  position: relative
-  cursor: pointer
-  background: #444
-  box-sizing: border-box
-  background-clip: content-box
+.hamburger-btn
   width: 35px
-  height: 24px
-  border-top: 11px solid transparent
-  border-bottom: 11px solid transparent
-  transform: rotate(0deg)
-  transition: all 0.25s ease-in-out
+  height: 35px
+  display: flex
+  align-items: center
+  justify-content: center
+  border: none
+  background: none
+  cursor: pointer
   @media (min-width: 768px)
     display: none
-  &:before,
-  &:after 
-    content: ""
-    position: absolute
-    background: #444
-    height: 2px
+  span
     width: 100%
-    right: 0
-    will-change: rotate
-    -webkit-transform: rotate(0deg)
+    height: 3px
+    position: relative
+    background: $txt
+    border-radius: 2px
     transform: rotate(0deg)
-    -webkit-transition: all 0.5s ease
-    transition: all 0.5s ease
-  
-  &:before 
-    top: -12px
-  
-  &:after 
-    bottom: -12px
-    // width: 90%
-  
+    transition: all 0.25s ease-in-out
+    &:before,
+    &:after 
+      content: ""
+      position: absolute
+      right: 0
+      width: inherit
+      height: inherit
+      background: inherit
+      border-radius: inherit
+      will-change: rotate
+      -webkit-transform: rotate(0deg)
+      transform: rotate(0deg)
+      -webkit-transition: all 0.5s ease
+      transition: all 0.5s ease
+
+    $indent: -12px
+    &:before 
+      top: $indent
+    &:after 
+      bottom: $indent
+    
   &.active 
-    background: transparent
-    background-clip: content-box
-  
-  &.active:before 
-    -webkit-transform: rotate(135deg)
-    transform: rotate(135deg)
-    top: 0
-    background: #444
-    width: 110%
-  
-  &.active:after 
-    bottom: 0
-    -webkit-transform: rotate(-135deg)
-    transform: rotate(-135deg)
-    background: #444
-    width: 110%
+    span
+      background: transparent
+      background-clip: content-box
+      &:before 
+        transform: rotate(135deg)
+        top: 0
+        background: #444
+        width: 115%
+      &:after 
+        bottom: 0
+        transform: rotate(-135deg)
+        background: #444
+        width: 115%
   
 
 

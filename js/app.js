@@ -10,15 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // });
   //------------------------------------------------------------------------------
   //------------ menu hamburger ----------------------------------
-  $("#navToggle").click(function () {
+  $(".hamburger-btn").click(function () {
     $(this).toggleClass("active");
-    $(".top-nav").toggleClass("open");
+    $(".header__nav").toggleClass("open");
     $("body").toggleClass("locked");
   });
-  $(".top-nav").click(function () {
+  $(".header__nav").click(function () {
     $(this).removeClass("active");
-    $("#navToggle").removeClass("active");
-    $(".top-nav").removeClass("open");
+    $(".hamburger-btn").removeClass("active");
+    $(".header__nav").removeClass("open");
     $("body").removeClass("locked");
   });
   //---------------------------------------------------------------------------
@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // $('section').addClass('wow fadeInUp');
   $('.topic').first().addClass('wow animate__zoomInUp');
   // $('.portfolio-list__item').addClass('wow bounceIn');
+  // var plus = 0;
+  // $('.filter-btns button').addClass('wow animate__zoomInDown').each(function(i) {
+  //   plus += 0.2;
+  //   $(this).attr('data-wow-delay', plus + 's');
+  // });
   var plus = 0;
   $('.filter-btns button').addClass('wow animate__zoomInDown').each(function(i) {
     plus += 0.2;
