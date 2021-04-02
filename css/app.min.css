@@ -725,12 +725,10 @@ section:last-child {
 .portfolio-list__item img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
-  position: absolute;
-  top: 0;
 }
 
 .portfolio-list__item .description {
