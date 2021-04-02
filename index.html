@@ -84,7 +84,7 @@
           <!-- <li><a href="#section-about">Обо мне</a></li> -->
         </ul>
       </nav>
-      <button class="hamburger-btn" role="navigation">
+      <button class="hamburger-btn" aria-label="Меню">
         <span></span>
       </button>
     </div>
@@ -94,16 +94,17 @@
     <section id="section-portfolio">
       <div class="container">
         <h1 class="topic">Примеры моих работ</h1>
+        <!-- <h2 class="topic">Примеры моих работ</h2> -->
 
         <div class="filter-btns" id="filter-btns">
-          <button class="btn active" data-filter="portfolio-list__item">Все</button>
-          <button class="btn" data-filter="shop">Магазин</button>
-          <button class="btn" data-filter="presentation">Визитка</button>
-          <button class="btn" data-filter="catalog">Каталог</button>
-          <button class="btn" data-filter="portal">Портал</button>
-          <button class="btn" data-filter="corporation">Корпоративный</button>
-          <button class="btn" data-filter="landing">landing page</button>
-          <button class="btn" data-filter="administration">Админка</button>
+          <button class="btn active" data-filter="portfolio-list__item" aria-label="Фильтр проектов - Все">Все</button>
+          <button class="btn" data-filter="shop" aria-label="Фильтр проектов - Магазин">Магазин</button>
+          <button class="btn" data-filter="presentation" aria-label="Фильтр проектов - Визитка">Визитка</button>
+          <button class="btn" data-filter="catalog" aria-label="Фильтр проектов - Каталог">Каталог</button>
+          <button class="btn" data-filter="portal" aria-label="Фильтр проектов - Портал">Портал</button>
+          <button class="btn" data-filter="corporation" aria-label="Фильтр проектов - Корпоративный">Корпоративный</button>
+          <button class="btn" data-filter="landing" aria-label="Фильтр проектов - landing page">landing page</button>
+          <button class="btn" data-filter="administration" aria-label="Фильтр проектов - Админка">Админка</button>
         </div>
 
         <ul class="portfolio-list">
@@ -293,6 +294,64 @@
     </section> -->
     <!-- /#section-about -->
 
+    <section id="section-tec">
+      <div class="container">
+        <h2 class="topic">Технологии</h2>
+        <div class="tec">
+          <div class="tec__filter">
+            <button class="btn tec__btn active" data-filter="tec__item">Все</button>
+            <button class="btn tec__btn" data-filter="language">Языки</button>
+            <button class="btn tec__btn" data-filter="preprocessor">Препроцессоры</button>
+            <button class="btn tec__btn" data-filter="framework">Фреймворки и Библиотеки</button>
+            <button class="btn tec__btn" data-filter="cms">CMS</button>
+            <button class="btn tec__btn" data-filter="tools">Инструменты</button>
+          </div>
+          <ul class="tec__list">
+            <li class="tec__item language">
+              <img src="img/dest/icons/HTML5-Logo.png" alt="HTML5">
+            </li>
+            <li class="tec__item language">
+              <img src="img/dest/icons/css3.gif" alt="CSS3">
+            </li>
+            <li class="tec__item language">
+              <img src="img/dest/icons/javascript_logo.png" alt="JavaScript">
+            </li>
+            <li class="tec__item framework">
+              <img src="img/dest/icons/jquery.png" alt="jQuery">
+            </li>
+            <li class="tec__item framework">
+              <img src="img/dest/icons/bootstrap.png" alt="Bootstrap">
+            </li>
+            <li class="tec__item cms">
+              <img src="img/dest/icons/WordPress.png" alt="WordPress">
+            </li>
+            <li class="tec__item cms">
+              <img src="img/dest/icons/modx.png" alt="ModX">
+            </li>
+            <li class="tec__item tools">
+              <img src="img/dest/icons/gulp.png" alt="Gulp">
+            </li>
+            <!-- <li class="tec__item">
+              <img src="img/dest/icons/nodejs.png" alt="Node.js">
+            </li> -->
+            <!-- <li class="tec__item">
+              <img src="img/dest/icons/Npm-logo.png" alt="NPM">
+            </li> -->
+            <li class="tec__item tools">
+              <img src="img/dest/icons/Git-Logo-1788C.png" alt="Git">
+            </li>
+            <li class="tec__item preprocessor">
+              <img src="img/dest/icons/less.png" alt="LESS">
+            </li>
+            <li class="tec__item preprocessor">
+              <img src="img/dest/icons/sass.png" alt="SASS">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- /#section-tec -->
+
     <section id="section-contacts">
       <div class="container">
         <h2 class="topic">Контакты</h2>
@@ -359,20 +418,6 @@
             </fieldset>
           </form>
         </div> -->
-        <div class="tec">
-          <img src="img/dest/icons/HTML5-Logo.png" alt="HTML5">
-          <img src="img/dest/icons/css3.gif" alt="CSS3">
-          <img src="img/dest/icons/javascript_logo.png" alt="JavaScript">
-          <img src="img/dest/icons/jquery.png" alt="jQuery">
-          <img src="img/dest/icons/bootstrap.png" alt="Bootstrap">
-          <img src="img/dest/icons/WordPress.png" alt="WordPress">
-          <img src="img/dest/icons/gulp.png" alt="Gulp">
-          <img src="img/dest/icons/nodejs.png" alt="Node.js">
-          <!-- <img src="img/dest/icons/Npm-logo.png" alt="NPM"> -->
-          <img src="img/dest/icons/Git-Logo-1788C.png" alt="Git">
-          <img src="img/dest/icons/less.png" alt="LESS">
-          <img src="img/dest/icons/sass.png" alt="SASS">
-        </div>
       </div>
     </section>
     <!-- /#section-contacts -->

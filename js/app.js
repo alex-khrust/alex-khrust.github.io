@@ -247,5 +247,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 350);
   });
   //--------------------------------------------------------------------------
+  // Фильтр технологий ---------------------------------------------------------
+  $(".tec__filter button").on('click', function () {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    var selectedClass = $(this).attr("data-filter");
+    $(".tec__list").fadeTo(100, 0.1);
+    $(".tec__item").not("." + selectedClass).fadeOut().removeClass('show');
+    setTimeout(function () {
+      $("." + selectedClass).fadeIn().addClass('show');
+      $(".tec__list").fadeTo(300, 1);
+    }, 350); 
+  });
+  //--------------------------------------------------------------------------
 })
 

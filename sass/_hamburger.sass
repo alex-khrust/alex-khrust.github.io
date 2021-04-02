@@ -1,6 +1,7 @@
 .hamburger-btn
   width: 35px
   height: 35px
+  padding: 0
   display: flex
   align-items: center
   justify-content: center
@@ -37,8 +38,12 @@
       top: $indent
     &:after 
       bottom: $indent
-    
-  &.active 
+  &:hover
+    background: none
+    border-radius: 0
+  &.active
+    background: none
+    border-radius: 0
     span
       background: transparent
       background-clip: content-box

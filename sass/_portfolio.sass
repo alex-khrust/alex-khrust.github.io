@@ -8,31 +8,6 @@
     gap: 8px 15px
     align-items: center
     justify-content: center
-    .btn,
-    button
-      width: auto
-      height: 30px
-      padding: 0 14px
-      border-radius: 30px
-      border: 2px solid #444
-      text-transform: uppercase
-      font-size: 14px
-      font-weight: 700
-      line-height: 1
-      color: #444
-      display: flex
-      align-items: center
-      justify-content: center
-      background: none
-      cursor: pointer
-      transition: .3s
-      box-shadow: none
-      transform: none
-      &:hover,
-      &:active,
-      &.active
-        background: #444
-        color: #ffae4a
 
 .portfolio-list
   width: 100%
@@ -109,6 +84,22 @@
       transform: translateY(200px)
       transition: transform .5s ease-in-out, background, color .3s ease-in-out
       position: relative
+      height: auto !important
+      padding: 10px 15px !important
+      position: relative
+      font-weight: bold
+      font-size: 16px
+      line-height: 1
+      letter-spacing: 1px
+      color: white
+      text-decoration: none
+      border: 2px solid lightgray
+      border-radius: 10px
+      &:hover
+        box-shadow: none
+        background: #ffffff
+        color: #444
+        // transform: scale(.95)
   &:hover
     //transform: scale(1.1)
     // box-shadow: 0 0 30px #000000bb
@@ -125,24 +116,30 @@
       transition: all .5s ease-in-out
     .description .btn
       transition: transform .7s ease-in-out, background, color .3s ease-in-out
-.btn
-  text-decoration: none
-  padding: 10px 15px
-  font-weight: bold
-  font-size: 18px
+
+
+.btn,
+button
+  width: auto
+  height: 30px
+  padding: 0 14px
+  border-radius: 30px
+  border: 2px solid #444
+  text-transform: uppercase
+  font-size: 14px
+  font-weight: 700
   line-height: 1
-  letter-spacing: 1px
-  position: relative
-  // background: #444444
-  // text-transform: uppercase
-  color: white
-  border: 2px solid lightgray
-  border-radius: 10px
-  // transition: all .3s ease
-  // box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.30), -5px -5px 20px rgba(51, 51, 51, 0.30), 5px -5px 20px rgba(51, 51, 51, 0.30), -5px 5px 20px rgba(51, 51, 51, 0.30)
-  &:hover
-    box-shadow: none
-    background: #ffffff
-    color: #444
-    // border: 2px solid #444
-    transform: scale(.95)
+  color: #444
+  display: flex
+  align-items: center
+  justify-content: center
+  background: none
+  cursor: pointer
+  transition: .3s
+  box-shadow: none
+  transform: none
+  &:hover,
+  &:active,
+  &.active
+    background: #444
+    color: #ffae4a

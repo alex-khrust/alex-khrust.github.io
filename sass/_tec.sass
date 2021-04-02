@@ -1,20 +1,101 @@
+// .tec
+//   width: 100%
+//   height: auto
+//   margin: 25px auto
+//   // display: grid
+//   // grid-template-columns: repeat(auto-fill, minmax(auto, 100px))
+//   // grid-template-rows: minmax(auto, 80px)
+//   // grid-auto-flow: row
+//   // grid-gap: 10px
+//   display: flex
+//   align-items: center
+//   justify-content: space-between
+//   // flex-flow: wrap
+//   & img
+//     width: 8%
+//     height: 100%
+//     max-width: 125px
+//     max-height: 80px
+//     margin: 0 .5%
+//     // margin: 0 auto
+//     object-fit: contain
+//     filter: grayscale(100%)
+//     transition-duration: 0.3s
+//     transition-delay: 0.2s
+//     &:hover
+//       filter: grayscale(0%) drop-shadow(0 10px 15px #0000007c)
+//       transform: scale(1.2) translateY(-10px)
+
+
+
 .tec
   width: 100%
   height: auto
-  margin: 25px auto
-  // display: grid
-  // grid-template-columns: repeat(auto-fill, minmax(auto, 100px))
-  // grid-template-rows: minmax(auto, 80px)
-  // grid-auto-flow: row
-  // grid-gap: 10px
-  display: flex
+  margin: 0 auto 25px
+  display: grid
+  grid-auto-flow: row
+  grid-template-columns: minmax(auto, 650px)
+  gap: 60px
   align-items: center
-  justify-content: space-between
-  // flex-flow: wrap
-  & img
-    width: 8%
+  justify-content: center
+  justify-items: center
+  @media (min-width: 768px)
+    grid-template-columns: auto minmax(auto, 650px)
+  &__filter
+    width: 100%
+    min-width: 250px
+    max-width: 350px
+    display: grid
+    gap: 10px
+
+  &__btn
+    width: 100%
+    height: 45px
+    color: $txt
+    cursor: pointer
+    
+  &__list
+    width: 100%
+    max-width: 650px
+    // padding: 0 15px
+    display: grid
+    grid-auto-flow: dense
+    grid-template: repeat(auto-fill, minmax(auto, 80px)) / repeat(auto-fit, minmax(calc(25% - 1.5vmax), 1fr))
+    gap: 3vmax 2vmax
+    justify-content: center
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: -31px
+      left: 0
+      height: 2px
+      width: 100%
+      background: $txt
+    @media (min-width: 768px)
+      min-height: 300px
+      padding: 30px 0
+      // display: grid
+      // grid-template: repeat(auto-fill, minmax(auto, 80px)) / repeat(auto-fit, minmax(calc(25% - 1.5vmax), 1fr))
+      justify-content: start
+      &:before
+        top: 0
+        left: -31px
+        height: 100%
+        width: 2px
+
+  &__item
+    width: auto
+    height: auto
+    // max-width: calc(25% - 1.5vmax)
+    display: flex
+    align-items: center
+    justify-content: center
+
+  img
+    width: 100%
     height: 100%
-    max-width: 125px
+    // max-width: 140px
     max-height: 80px
     margin: 0 .5%
     // margin: 0 auto
@@ -23,5 +104,5 @@
     transition-duration: 0.3s
     transition-delay: 0.2s
     &:hover
-      filter: grayscale(0%) drop-shadow(0 10px 15px #0000007c)
-      transform: scale(1.2) translateY(-10px)
+      filter: grayscale(0%) drop-shadow(0 0 10px #0000007c)
+      transform: scale(1.2)
