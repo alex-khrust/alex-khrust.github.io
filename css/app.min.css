@@ -1221,6 +1221,9 @@ button.active {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
+    -ms-grid-rows: (minmax(auto, 80px))[auto-fill];
+    -ms-grid-columns: (minmax(calc(25% - 1.5vmax), 1fr))[auto-fill];
+        grid-template: repeat(auto-fill, minmax(auto, 80px))/repeat(auto-fill, minmax(calc(25% - 1.5vmax), 1fr));
   }
   .tec__list:before {
     top: 0;
@@ -1260,10 +1263,10 @@ button.active {
 }
 
 .tec img:hover {
-  -webkit-filter: grayscale(0%) drop-shadow(0 0 10px #0000007c);
-          filter: grayscale(0%) drop-shadow(0 0 10px #0000007c);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 footer {
